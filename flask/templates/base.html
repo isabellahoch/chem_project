@@ -172,7 +172,6 @@ a.active-sub-link {
 					<li class="{% block homeisactive %}{% endblock %}"><a href="/" id="nav_">Home</a></li>
 					<li class="{% block aboutisactive %}{% endblock %}"><a href="/about" id="nav_about">About</a></li>
                               <li class="{% block bibliographyisactive %}{% endblock %}"><a href="/bibliography" id="nav_bibliography">Bibliography</a></li>
-					<li class="{% block contactisactive %}{% endblock %}"><a href="/contact" id="nav_contact">Contact</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right" style="display:inline">
 					{% if logged_in %}
@@ -195,10 +194,10 @@ a.active-sub-link {
   <div class="container">
     <div class="row pt-5 mb-3 text-center d-flex justify-content-center" style="text-transform:uppercase;">
       <div class="col-md-2 mb-3">
-        <h6 class="title font-bold"><a class="{% block about2isactive %}{% endblock %}-sub-link" href="/about">About Us</a></h6>
+        <h6 class="title font-bold"><a class="{% block about2isactive %}{% endblock %}-sub-link" href="/about">About This Project</a></h6>
       </div>
       <div class="col-md-2 mb-3">
-        <h6 class="title font-bold"><a class="{% block contact2isactive %}{% endblock %}-sub-link" href="/contact">Contact</a></h6>
+        <h6 class="title font-bold"><a class="{% block bibliography2isactive %}{% endblock %}-sub-link" href="/biblipgraphy">My Sources</a></h6>
       </div>
     </div>
     <hr class="rgba-white-light" style="margin: 0 15%;">

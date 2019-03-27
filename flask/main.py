@@ -72,30 +72,21 @@ def page_not_found(e):
     title = 'Not Found'
     code = '404'
     message = "We can't seem to find the page you're looking for."
-    if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 404
-    else:
-        return render_template('error.html', title = title, code = code, message = message), 404
+    return render_template('error.html', title = title, code = code, message = message), 404
 
 @app.errorhandler(403)
 def page_forbidden(e):
     title = 'Forbidden'
     code = '403'
     message = "You do not have access to this page."
-    if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 403
-    else:
-        return render_template('error.html', title = title, code = code, message = message), 403
+    return render_template('error.html', title = title, code = code, message = message), 403
 
 @app.errorhandler(500)
 def internal_server_error(e):
     title = 'Internal Server Error'
     code = '500'
     message = "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application."
-    if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 500
-    else:
-        return render_template('error.html', title = title, code = code, message = message), 500
+    return render_template('error.html', title = title, code = code, message = message), 500
 
 @app.route('/')
 def index():
