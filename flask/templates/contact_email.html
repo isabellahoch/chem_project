@@ -1,0 +1,30 @@
+{% extends "email_base.html" %}
+{% block title %}Contact Form Submission: {{ info.subject }}{% endblock %}
+{% block heading %}{{ info.subject }}{% endblock %}
+{% block content %}
+<div class="row text-center">
+	<p class="fix-me-pls"><strong>Name: </strong>{{ info.name }}</p>
+	<p class="fix-me-pls"><strong>Email: </strong>{{ info.email }}</p>
+	<p class="fix-me-pls"><strong>Subject: </strong>{{ info.subject }}</p>
+	{% if info.timestamp %}
+	<p class="fix-me-pls"><strong>Time: </strong>{{ info.timestamp }}</p>
+	{% endif %}
+	<p class="fix-me-pls"><strong>Message: </strong>{{ info.message }}</p>
+	<br>
+	{% if user.profile %}
+	<p class="fix-me-pls">This user is signed up for INCUB8. You can check out their profile <a href="{{ user.profile }}">here</a>!</p>
+	{% endif %}
+</div>
+<div class="row text-center" style="padding-top:20px">
+	<p class="fix-me-pls">Regards,</p>
+	<p class="fix-me-pls">the <a href="http://incub8.herokuapp.com">INCUB8</a> Team</p>
+</div>
+{% endblock %}
+{% block ref %}welcome&s=t{% endblock %}
+{% block head %}
+<style>
+.fix-me-pls {
+	width:100%;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}INCUB8 | Log In{% endblock %}
+{% block content %}
+<!-- <h1>Registration</h1> -->
+<div class="row align-items-center justify-content-center">
+	<form action="/login" method="post" class="regForm">
+	  <p class="form_title">Email</p>
+	  {{ form.email }}
+	  <p class="form_title">Password</p>
+	  {{ form.password }}
+	  {{ form.hidden_tag() }}
+	  <br>
+	  <br>
+	  {{ form.submit }}
+	</form>
+</div>
+{% endblock %}

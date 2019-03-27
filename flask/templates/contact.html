@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Contact Us | LET'S GET THIS BREAD{% endblock %}
+{% block contactisactive %}active{% endblock %}
+{% block contact2isactive %}active{% endblock %}
+{% block heading %}Contact Us{% endblock %}
+{% block content %}
+<!-- <div class="heading">
+	<h2>Contact Us</h2>
+</div> -->
+<div class="row align-items-center justfy-content-center text-center" style="padding-top:25px">
+	<h2 style="width:100%">Contact</h2>
+</div>
+<div class="row align-items-center justfy-content-center" style="padding:25px">
+	<div class="col">
+	{% if post == 'yup' %}
+	<h4>Thank you! Your message has been sent.</h4>
+	{% endif %}
+	  <!-- <form action="https://formspree.io/incub8sf@gmail.com"
+      method="POST"> -->
+      <form action="/contact"
+      method="POST">
+	    {{ form.hidden_tag() }}
+	 
+	    <p style="display:none">{{ form.name.label }}</p>
+	    <p class="form_title">Name</p>
+	    {{ form.name }}
+	 
+	    <p style="display:none">{{ form.email.label }}</p>
+	    <p class="form_title">Email</p>
+	    {{ form.email }}
+	 
+	    <p style="display:none">{{ form.subject.label }}</p>
+	    <p class="form_title">Subject</p>
+	    {{ form.subject }}
+	 
+	    <p style="display:none">{{ form.message.label }}</p>
+	    <p class="form_title">Message</p>
+	    {{ form.message }}
+	    <div style="width: 100%; padding-top: 20px; padding-bottom: 20px;">{{ form.submit }}</div>
+	  </form>
+	 <p>If for some reason this form isn't working, please feel free to reach out to us directly by emailing <a class="link" href="mailto:incub8sf@gmail.com?subject=I have a question about INCUB8...">incub8sf@gmail.com</a>!</p>
+	</div>
+</div>
+
+{% endblock %}

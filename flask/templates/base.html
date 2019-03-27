@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Let's Get This Bread was created by Isabella Hochschild, a sophomore at University High School for chemistry.">
+    <meta name="keywords" content="bread, chemistry, {% block keywords %}{% endblock %}" />
+    {% block meta %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+<!--     <link rel="canonical" href="http://incub8.herokuapp.com"> -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <style>
+          body {
+            /*background-color:#e8e8e8;*/
+          }
+    </style>
+    <style>
+    :root {
+    /*--main-color: #87CEFA !important; */
+    /*--main-color: #E6E6FA !important; */
+    --main-color: #dcd2f7 !important;
+  }
+
+[class^="entypo-"]:before,
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+.form_title {
+  padding-top: 20px !important;
+  font-size:10pt !important;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .dropdown-lr h3 {
+    color: #eee;
+  }
+  .dropdown-lr label {
+    color: #eee;
+  }
+
+  #logo {
+  	padding-right:75px
+  }
+
+}
+
+.link {
+  color: var(--main-color)
+}
+
+.nav li .active {
+  color: #000;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: inherit;
+    color: var(--main-color);
+}
+
+.nav li .active {
+  color: #000;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: inherit;
+    /*color: #4eb7c0;*/
+    color: var(--main-color)
+}
+
+a:hover {
+  color: var(--main-color) !important;
+  text-decoration: underline !important;
+}
+
+.link:hover {
+  color: var(--main-color) !important;
+  text-decoration: underline !important;
+}
+
+.link {
+  color: var(--main-color)
+}
+
+a {
+  color: var(--main-color)
+}
+
+.title {
+  width:100%;
+}
+
+.btn-incub8, .btn-custom {
+    color: #fff;
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    width:100%;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-style: none !important;
+}
+
+a.active-sub-link {
+  color: #A8A8A8 !important;
+}
+
+/*@media (min-width: 768px) {
+
+  .navbar-collapse.collapse {
+  width: 95vw !important;
+}
+
+@media (min-width: 830px) {
+
+  .navbar-collapse.collapse {
+  width: 90vw !important;
+}*/
+
+
+@media (min-width: 768px) {
+.navbar-expand-md .navbar-toggler {
+    display: none !important;
+}
+}
+
+@media screen and (min-width: 769px) {
+  #logo {
+    content:url("{{ url_for('static', filename='img/logo.png') }}");
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #navbarNav {
+    font-size: 11px;
+  }
+}
+
+@media screen and (min-width: 788px) {
+  #navbarNav {
+    font-size: 12px !important;
+  }
+}
+
+  </style>
+
+{% block head %}{% endblock %}
+
+ <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/49c78097cadb509a2727708cc/022a632cd4b59967de78c0ad5.js");</script>
+    </head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-expand-md" id="navbar">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/" style="padding-top:5px">
+				<img src="{{ url_for('static', filename='img/logo.png') }}" id="logo" style="height:40px;">
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="all:initial">
+				<!-- <span class="navbar-toggler-icon"></span> -->
+				<i class="fas fa-bars"></i>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav" style="    text-transform: uppercase;">
+				<ul class="nav navbar-nav" style="display:inline">
+					<li class="{% block homeisactive %}{% endblock %}"><a href="/" id="nav_">Home</a></li>
+					<li class="{% block aboutisactive %}{% endblock %}"><a href="/about" id="nav_about">About</a></li>
+					<li class="{% block contactisactive %}{% endblock %}"><a href="/contact" id="nav_contact">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right" style="display:inline">
+					{% if logged_in %}
+					<li class="{% block dashboardisactive %}{% endblock %}"><a href="/dashboard" id="nav_dashboard">Dashboard</a></li>
+					<li><a href="/logout" id="nav_logout">Log Out</a></li>
+					{% else %}
+					<li><a href="" id="nav_registration?role=investor"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+					<li><a href="/login" id="nav_login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>
+  </nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="page-footer deep-purple center-on-small-only pt-0">
+  <div class="container">
+    <div class="row pt-5 mb-3 text-center d-flex justify-content-center" style="text-transform:uppercase;">
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a class="{% block about2isactive %}{% endblock %}-sub-link" href="/about">About Us</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a class="{% block contact2isactive %}{% endblock %}-sub-link" href="/contact">Contact</a></h6>
+      </div>
+    </div>
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4" style="padding-top: 25px; height: 75px;>
+      <div class="col">
+        <div class="social-footer mb-5 flex-center social-links" id="social-media-links" style="font-size:25px">
+          <!--Facebook-->
+          <a class="icons-sm fb-ic" href="https://www.facebook.com/1ncub8"><i class="fab fa-facebook-f"> </i></a>
+          <!--Twitter-->
+          <a class="icons-sm tw-ic" href="https://twitter.com/1ncub8"><i class="fab fa-twitter"> </i></a>
+          <!--Google +-->
+          <a class="icons-sm gplus-ic" href="https://plus.google.com/106958539680238184412"><i class="fab fa-google-plus"> </i></a>
+          <!--Linkedin-->
+          <a class="icons-sm li-ic" href="https://www.linkedin.com/company/1ncub8/"><i class="fab fa-linkedin-in"> </i></a>
+          <!--Instagram-->
+          <a class="icons-sm ins-ic" href="https://www.instagram.com/1ncub8/"><i class="fab fa-instagram"> </i></a>
+          <!--Pinterest-->
+          <a class="icons-sm pin-ic" href="https://www.pinterest.com/1ncub8/"><i class="fab fa-pinterest"> </i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="clearfix rgba-white-light" style="margin: 10% 15% 5%; margin-bottom: 0px; margin-top:0px">
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">&copy; <span id="copyright_year"></span>: <a href="http://isabellahochschild.herokuapp.com"> Isabella Hochschild </a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+                    <!--/Footer-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+<script>
+var date = new Date();
+var year = date.getFullYear();  
+document.getElementById("copyright_year").innerHTML = year.toString();
+</script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

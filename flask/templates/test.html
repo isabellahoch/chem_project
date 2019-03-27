@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <style>
+    :root {
+    /*--main-color: #87CEFA !important; */
+    --main-color: #4169E1 !important; 
+  }
+
+[class^="entypo-"]:before,
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .dropdown-lr h3 {
+    color: #eee;
+  }
+  .dropdown-lr label {
+    color: #eee;
+  }
+
+}
+
+.link {
+  color: var(--main-color)
+}
+
+.nav li .active {
+  color: #000;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: inherit;
+    color: var(--main-color);
+}
+
+.nav li .active {
+  color: #000;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color: inherit;
+    /*color: #4eb7c0;*/
+    color: var(--main-color)
+}
+
+a:hover {
+  color: var(--main-color) !important;
+  text-decoration: underline !important;
+}
+
+.link:hover {
+  color: var(--main-color) !important;
+  text-decoration: underline !important;
+}
+
+.link {
+  color: var(--main-color)
+}
+
+a {
+  color: var(--main-color)
+}
+
+.title {
+  width:100%;
+}
+
+.btn-incub8, .btn-custom {
+    color: #fff;
+    background-color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    width:100%;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border-style: none !important;
+}
+
+@media (min-width: 768px) {
+
+  .navbar-collapse.collapse {
+  width: 95vw !important;
+}
+
+@media (min-width: 830px) {
+
+  .navbar-collapse.collapse {
+  width: 90vw !important;
+}
+
+  </style>
+ {% block head %}{% endblock %}
+    </head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="/" style="padding-top:5px">
+          <img src="{{ url_for('static', filename='img/logo.png') }}" style="height:40px; padding-right:75px">
+        </a>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav" style="display:inline">
+            <li class="active"><a href="/">Home</a></li>
+            <li class="{% block startupsisactive %}{% endblock %}"><a href="/explore">Startups</a></li>
+            <li class="{% block swipeisactive %}{% endblock %}"><a href="/swipe">Swipe</a></li>
+            <li class="{% block aboutisactive %}{% endblock %}"><a href="/about">About</a></li>
+            <li class="{% block helpisactive %}{% endblock %}"><a href="/help">Help</a></li>
+            <li class="{% block contactisactive %}{% endblock %}"><a href="/contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="display:inline">
+            {% if logged_in %}
+            <li class="{% block dashboardisactive %}{% endblock %}"><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Log Out</a></li>
+            {% else %}
+            <li><a href="{{ url_for('registration',  role='investor') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+{% block content %}
+{% endblock %}
+
+<footer class="page-footer deep-purple center-on-small-only pt-0">
+  <div class="container">
+    <div class="row pt-5 mb-3 text-center d-flex justify-content-center">
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a href="/about">About Us</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a href="/successes">Success Stories</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a href="/awards">Awards</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a href="/help">Help</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a href="/contact">Contact</a></h6>
+      </div>
+    </div>
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4" style="padding-top: 25px; height: 75px;>
+      <div class="col">
+        <div class="social-footer mb-5 flex-center social-links" id="social-media-links" style="font-size:25px">
+          <!--Facebook-->
+          <a class="icons-sm fb-ic" href="https://www.facebook.com/incub8sf"><i class="fab fa-facebook-f"> </i></a>
+          <!--Twitter-->
+          <a class="icons-sm tw-ic" href="https://twitter.com/incub8sf"><i class="fab fa-twitter"> </i></a>
+          <!--Google +-->
+          <a class="icons-sm gplus-ic" href="https://plus.google.com/106958539680238184412"><i class="fab fa-google-plus"> </i></a>
+          <!--Linkedin-->
+          <a class="icons-sm li-ic" href="https://www.linkedin.com/company/incub8sf/"><i class="fab fa-linkedin-in"> </i></a>
+          <!--Instagram-->
+          <a class="icons-sm ins-ic" href="https://www.instagram.com/incub8sf/"><i class="fab fa-instagram"> </i></a>
+          <!--Pinterest-->
+          <a class="icons-sm pin-ic" href="https://www.pinterest.com/incub8sf/"><i class="fab fa-pinterest"> </i></a>
+        </div>
+      </div>
+    </div>
+    <hr class="clearfix rgba-white-light" style="margin: 10% 15% 5%; margin-bottom: 0px; margin-top:0px">
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">&copy; 2018: <a href="/"> INCUB8 </a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+                    <!--/Footer-->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy" crossorigin="anonymous"></script>
+{% block js %}
+{% endblock %}
+</body>
+</html>

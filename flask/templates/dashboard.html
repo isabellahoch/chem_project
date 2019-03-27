@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Dashboard | INCUB8{% endblock %}
+{% block dashboardisactive %}active{% endblock %}
+{% block content %}
+<h1 style="padding-left:20px">Welcome, {{ name }} !</h1>
+<a class="link" href="/account">Edit Account</a>
+{% if role %}
+<p>{{ role }}</p>
+{% endif %}
+{% endblock %}

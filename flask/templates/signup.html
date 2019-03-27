@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Sign Up! | INCUB8{% endblock %}
+{% block content %}
+<!-- <h1>Registration</h1> -->
+<div class="row align-items-center justify-content-center">
+	<center><h3 style="width:100%">Sign Up as a Startup!</h3>
+	<span style="width:100%">You will be able to connect with investors, receive mentorship and advice, <br>learn about how to develop your idea, and unlock other features of INCUB8.</span></center>
+	<br><br>
+	<div id="reg_form_div" style="width:60%; padding-top:40px">
+		<form action="/register" method="post" class="regForm">
+			<p>Category</p>
+			{{ form.category }}
+			<p class="form_title">Name</p>
+			{{ form.name }}
+			<p class="form_title">Description</p>
+			{{ form.description }}
+			<p class="form_title">Location (nearest major city)</p>
+			{{ form.location }}
+			<p class="form_title">Link to an image or cover photo. This will be displayed on your profile.</p>
+			{{ form.image }}
+			<p class="form_title">Email</p>
+			{{ form.email }}
+			<p class="form_title">Password</p>
+			{{ form.password }}
+			{{ form.hidden_tag() }}
+			<p class="form_title">Confirm Password</p>
+			{{ form.confirmpassword }}
+			{{ form.hidden_tag() }}
+		  <br>
+		  <br>
+		  <input type="submit" class="btn btn-success" value="Submit">
+		</form>
+	</div>
+</div>
+{% endblock %}
