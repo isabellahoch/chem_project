@@ -3,9 +3,9 @@
 {% block homeisactive %}active{% endblock %}
 {% block content %}
 <div class="container text-center">
-	<div class="row">
+	<div class="row align-items-center justify-content-center">
         <p style="font-size:100px; color:#000">LET'S GET THIS BREAD</p>
-        <button id="enter_simulation" class=".hover-btn"><span>ENTER SIMULATION</span></button>
+        <button id="enter_simulation" class="hover-btn" style="width:min-content"><span>ENTER SIMULATION</span></button>
     </div>
 	<div class="row">
 		<p style="font-size:18px;padding:35px"><a href="/">LET'S GET THIS BREAD</a> was sponsored by <a href="http://uhsbakingclub.herokuapp.com">UHS BAKING CLUB</a>! This is Isabella's chemistry project yeet</p>
@@ -16,7 +16,7 @@
 {% block js %}
 <script>
 $( "#enter_simulation" ).click(function() {
-  window.location.href = "/simulation";
+  window.location.href = "http://lets-get-this-bread.herokuapp.com/simulation";
 });
 </script>
 {% endblock %}
