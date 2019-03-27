@@ -2,19 +2,13 @@ from flask import Flask, render_template, request, redirect, url_for, make_respo
 from flask_mongoengine import MongoEngine, Document
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, Form, SelectField, SubmitField, BooleanField
-from flask_login import LoginManager, UserMixin, login_user, login_required, logout_user, current_user
 from wtforms.validators import Email, Length, InputRequired, EqualTo, Regexp, URL
 from wtforms.widgets import TextArea
-from werkzeug.security import generate_password_hash, check_password_hash
 from db_connect import MONGODB_URI, db
 from math import ceil
 from forms import ContactForm, LoginForm, ContactForm
 from credentials import mlab_host, mlab_api_key, google_api_key, google_client_id, google_client_secret, gmail_password, google_app_password, sendgrid_password, cloudinary_api_key, cloudinary_api_secret
-from webclasses import WebStartup, WebInvestor, pushStartup, updateStartup, pushInvestor, updateInvestor, parse_multi_form, WebUser
-# from flask_uploads import UploadSet, configure_uploads, IMAGES
 from flask_mail import Mail, Message
-# from flask_oauth import OAuth
-# from oauth_flask import OAuth
 
 import urllib
 import time
@@ -79,9 +73,9 @@ def page_not_found(e):
     code = '404'
     message = "We can't seem to find the page you're looking for."
     if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email, logged_in=current_user.is_authenticated), 404
+        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 404
     else:
-        return render_template('error.html', title = title, code = code, message = message, logged_in=current_user.is_authenticated), 404
+        return render_template('error.html', title = title, code = code, message = message), 404
 
 @app.errorhandler(403)
 def page_forbidden(e):
@@ -89,9 +83,9 @@ def page_forbidden(e):
     code = '403'
     message = "You do not have access to this page."
     if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email, logged_in=current_user.is_authenticated), 403
+        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 403
     else:
-        return render_template('error.html', title = title, code = code, message = message, logged_in=current_user.is_authenticated), 403
+        return render_template('error.html', title = title, code = code, message = message), 403
 
 @app.errorhandler(500)
 def internal_server_error(e):
@@ -99,9 +93,9 @@ def internal_server_error(e):
     code = '500'
     message = "The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application."
     if (current_user.is_authenticated):
-        return render_template('error.html', title = title, code = code, message = message, name=current_user.email, logged_in=current_user.is_authenticated), 500
+        return render_template('error.html', title = title, code = code, message = message, name=current_user.email), 500
     else:
-        return render_template('error.html', title = title, code = code, message = message, logged_in=current_user.is_authenticated), 500
+        return render_template('error.html', title = title, code = code, message = message), 500
 
 @app.route('/')
 def index():
