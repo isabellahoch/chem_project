@@ -123,25 +123,24 @@ def embedded_simulation():
 def bibliography():
     return render_template('bibliography.html')
 
-@app.route('/routes', methods=['GET'])
-@admin_required
-def list_routes():
-    import urllib
-    output = []
-    for rule in app.url_map.iter_rules():
+# @app.route('/routes', methods=['GET'])
+# def list_routes():
+#     import urllib
+#     output = []
+#     for rule in app.url_map.iter_rules():
 
-        options = {}
-        for arg in rule.arguments:
-            options[arg] = "[{0}]".format(arg)
+#         options = {}
+#         for arg in rule.arguments:
+#             options[arg] = "[{0}]".format(arg)
 
-        methods = ','.join(rule.methods)
-        url = url_for(rule.endpoint, **options)
-        line = urllib.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, url))
-        output.append(line)
+#         methods = ','.join(rule.methods)
+#         url = url_for(rule.endpoint, **options)
+#         line = urllib.unquote("{:50s} {:20s} {}".format(rule.endpoint, methods, url))
+#         output.append(line)
     
-    for line in sorted(output):
-        print(line)
-    return redirect(url_for('index'))
+#     for line in sorted(output):
+#         print(line)
+#     return redirect(url_for('index'))
 
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
