@@ -5,14 +5,64 @@
 <div class="container text-center">
 	<div class="row">
         <p style="font-size:100px; color:#000">LET'S GET THIS BREAD</p>
+        <button id="enter_simulation" class=".hover-btn"><span>ENTER SIMULATION</span></button>
     </div>
 	<div class="row">
-		<p style="font-size:13px;padding:35px"><a href="/">LET'S GET THIS BREAD</a> was sponsored by <a href="http://uhsbakingclub.herokuapp.com">UHS BAKING CLUB</a>! This is Isabella's chemistry project yeet</p>
+		<p style="font-size:18px;padding:35px"><a href="/">LET'S GET THIS BREAD</a> was sponsored by <a href="http://uhsbakingclub.herokuapp.com">UHS BAKING CLUB</a>! This is Isabella's chemistry project yeet</p>
 	</div>
 	<hr>
 </div>
 {% endblock %}
+{% block js %}
+<script>
+$( "#enter_simulation" ).click(function() {
+  window.location.href = "/simulation";
+});
+</script>
+{% endblock %}
 {% block head %}
+<style>
+.hover-btn {
+  border-radius: 4px;
+  background-color: #5ca1e1;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  padding: 16px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.hover-btn{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hover-btn:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hover-btn:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.hover-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+</style>
 <style>
 
 .btn-outline-incub8 {
@@ -26,49 +76,6 @@
     color: #fff !important;
     background-color: var(--main-color) !important;
     border-color: var(--main-color) !important;
-}
-
-@media (max-width: 575px) {
-	#mc-embedded-subscribe {
-		width:100%;
-	}
-}
-
-@media (max-width: 600px) {
-
-	#subscribe_description {
-		padding-left:25px;
-		padding-right:25px;
-	}
-}
-
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
-  background-image: none;
-}
-
-.carousel-control-next-icon:after
-{
-  content: '>';
-  font-size: 50px;
-  color: #000;
-}
-
-.carousel-control-prev-icon:after {
-  content: '<';
-  font-size: 50px;
-  color: #000;
-}
-
-.carousel-caption {
-	background-color: #efefefef;
-    opacity: 0.8;
-    border-style: groove;
-    border-color: #fff;
-    color: #000;
 }
 
 hr {
