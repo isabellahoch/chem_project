@@ -1,0 +1,165 @@
+.account-nav-item {
+    background: #fff;
+    border: 1px solid #000;
+    display: block;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    margin-right: -1px;
+    text-align: center;
+    font-size: 18px;
+    -webkit-transition: background 444ms;
+    transition: background 444ms;
+    width: 100%;
+}
+
+.row {
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+}
+
+@media (min-width: 768px) {
+    .account-nav-item {
+        border-bottom: 0;
+        background: #faf9f7;
+        padding: 10px;
+        text-align: left;
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .account-nav-item.active, .account-nav-item:target {
+        position: relative;
+    }
+}
+
+@media (min-width: 576px) {
+    .account-nav-item {
+        border-bottom: 0;
+        background: #faf9f7;
+        padding: 10px;
+        text-align: left;
+        margin-bottom: 0;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 576px) {
+    .account-nav-item.active, .account-nav-item:target {
+        position: relative;
+    }
+}
+
+.account-nav-item.active, .account-nav-item:target {
+    background: #fff;
+    font-weight: 700;
+}
+
+account-panel.active {
+    position: relative;
+}
+.account-panel.active {
+    display: block;
+}
+@media (min-width: 768px) {
+.account-panel {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 20px;
+    position: relative;
+    top: auto;
+    left: auto;
+    height: auto;
+    clear: none;
+    min-height: 400px;
+}
+}
+
+.account-panel {
+    background-color: #faf9f7;
+    padding-top: 20px;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    clear: both;
+    min-height: 100%;
+}
+
+input[type=checkbox] {
+    margin-right: 10px !important;
+}
+
+input[type=checkbox], input[type=radio] {
+    margin: 4px 0 0;
+    margin-top: 1px \9;
+    line-height: normal;
+    display: inline;
+    width: fit-content;
+    height: fit-content;
+}
+
+.btn-black-border {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    font-size: 14px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    padding: 7px 28px;
+    padding: .5rem 2rem;
+    margin: 14px 0;
+    margin: 1rem 0;
+    font-weight: 700;
+    border: 1px solid;
+    border-color: inherit;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 1;
+}
+
+.account_heading {
+    padding-bottom: 20px;
+}
+
+.social-input input:focus {
+    background-color: #fff !important;
+}
+
+.social-input {
+    background: none !important;
+}
+
+button.update {
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    background-color: #fff !important;
+}
+
+textarea {
+    background-color: #faf9f7 !important;
+}
+
+input[type="text"], input[type="password"] {
+    background: none;
+}
+
+
+.mobile-go-back {
+    all:unset !important;
+    display:none;
+    -webkit-appearance:  none !important; /* WebKit */
+    -moz-appearance:  none !important; /* Mozilla */
+    -o-appearance:  none !important; /* Opera */
+    -ms-appearance:  none !important; /* Internet Explorer */
+    appearance:  none !important; /* CSS3 */
+}

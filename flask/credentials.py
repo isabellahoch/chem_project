@@ -1,0 +1,14 @@
+mlab_api_key = 'ZpD9FOwixdhFpcg_bDKNCiT5UgPpB8Od'
+google_api_key = 'AIzaSyAmwk3rkAmtSn7Q74ahhZxCjBgf_md1ROs'
+mlab_user = 'admin'
+mlab_pw = 'willwontwin1!'
+mlab_host = 'mongodb://admin:willwontwin1!@ds113692.mlab.com:13692/incub8sf'
+mlab_host_2 = 'mongodb://'+mlab_user+':'+mlab_pw+'@ds113692.mlab.com:13692/incub8sf'
+google_client_id = '910949673562-tnih34q93hb4a4q62vf1ggqjlbun0n7l.apps.googleusercontent.com'
+google_client_secret = '87vJqtD01nijigLEy2Ten22r'
+gmail_password = 'willwontwin'
+google_app_password = 'qiihjzinzmkzahtv'
+google_app_password_2 = 'fbspemprtvmqcdyv'
+sendgrid_password = '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'
+cloudinary_api_key = "546395445346295"
+cloudinary_api_secret = "UeK86IqIQECgywPm55bplf1N5Bc"
