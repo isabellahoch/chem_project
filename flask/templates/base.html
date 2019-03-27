@@ -156,34 +156,14 @@ a.active-sub-link {
     </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-expand-md" id="navbar">
+	<!-- <nav class="navbar navbar-inverse navbar-expand-md" id="navbar">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/" style="padding-top:5px">
 				<img src="{{ url_for('static', filename='img/logo.png') }}" id="logo" style="height:40px;">
 			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="all:initial">
-				<!-- <span class="navbar-toggler-icon"></span> -->
-				<i class="fas fa-bars"></i>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav" style="    text-transform: uppercase;">
-				<ul class="nav navbar-nav" style="display:inline">
-					<li class="{% block homeisactive %}{% endblock %}"><a href="/" id="nav_">Home</a></li>
-					<li class="{% block aboutisactive %}{% endblock %}"><a href="/about" id="nav_about">About</a></li>
-                              <li class="{% block bibliographyisactive %}{% endblock %}"><a href="/bibliography" id="nav_bibliography">Bibliography</a></li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right" style="display:inline">
-					{% if logged_in %}
-					<li class="{% block dashboardisactive %}{% endblock %}"><a href="/dashboard" id="nav_dashboard">Dashboard</a></li>
-					<li><a href="/logout" id="nav_logout">Log Out</a></li>
-					{% else %}
-					<li><a href="" id="nav_registration?role=investor"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-					<li><a href="/login" id="nav_login"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
-					{% endif %}
-				</ul>
-			</div>
 		</div>
 	</div>
-  </nav>
+  </nav> -->
 
 {% block content %}
 {% endblock %}
@@ -191,11 +171,14 @@ a.active-sub-link {
 <footer class="page-footer deep-purple center-on-small-only pt-0">
   <div class="container">
     <div class="row pt-5 mb-3 text-center d-flex justify-content-center" style="text-transform:uppercase;">
-      <div class="col-md-2 mb-3">
-        <h6 class="title font-bold"><a class="{% block about2isactive %}{% endblock %}-sub-link" href="/about">About This Project</a></h6>
+       <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a class="{% block homeisactive %}{% endblock %}-sub-link" href="/">HOME</a></h6>
       </div>
       <div class="col-md-2 mb-3">
-        <h6 class="title font-bold"><a class="{% block bibliography2isactive %}{% endblock %}-sub-link" href="/biblipgraphy">My Sources</a></h6>
+        <h6 class="title font-bold"><a class="{% block aboutisactive %}{% endblock %}-sub-link" href="/about">About This Project</a></h6>
+      </div>
+      <div class="col-md-2 mb-3">
+        <h6 class="title font-bold"><a class="{% block bibliographyisactive %}{% endblock %}-sub-link" href="/bibliography">Bibliography</a></h6>
       </div>
     </div>
     <hr class="rgba-white-light" style="margin: 0 15%;">
