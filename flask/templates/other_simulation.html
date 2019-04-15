@@ -1,0 +1,16 @@
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.4.0/aframe.min.js"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+</head>
+<body>
+    <a-scene look-controls wasd-controls>
+    	<a-assets>
+    		<img id="forest" src="{{ url_for('static', filename='img/backgrounds/forest.jpg') }}">
+    	</a-assets>
+    	<a-sky src="#forest"></a-sky>
+    	<a-box color="#6173F4" opacity="0.8" depth="2"></a-box>
+    	<a-sphere radius="2" src="texture.png" position="1 1 0"></a-sphere>
+    </a-scene>
+</body>
+</html>

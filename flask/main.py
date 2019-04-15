@@ -112,6 +112,10 @@ def simulation():
 def embedded_simulation():
     return render_template('actual_simulation.html')
 
+@app.route('/other-simulation')
+def other_simulation():
+    return render_template('other_simulation.html')
+
 @app.route('/bibliography')
 def bibliography():
     return render_template('bibliography.html')

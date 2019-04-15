@@ -9,14 +9,18 @@
 	    <!-- NGL for Aframe proof of concept -->
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/Aframe_component.js"></script>
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/ngl.dev.js"></script>
+	    <style>
+	    .a-loader-title {color: white;}
+		</style>
 	</head>
 	<body>
 		<div class="container">
-			<a-scene look-controls wasd-controls vr-mode-ui="enabled: true">
+			<a-scene look-controls wasd-controls loading-screen="dotsColor: blue; backgroundColor: black">
 				<a-camera></a-camera>
+				<!-- <a-entity camera look-controls position="0 1.6 0"></a-entity> -->
 				<!-- <a-entity ngl-mol = "mol_entry: rcsb://5ZVL.mmtf;"></a-entity> -->
 				<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity> -->
-				<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick" position="1 0.75 -3"></a-entity>
+				<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity>
 				<!-- <a-sky color="#ECECEC"></a-sky> -->
 			</a-scene>
 				<!-- <a-scene>
