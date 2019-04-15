@@ -17,10 +17,15 @@
 		<div class="container">
 			<a-scene look-controls wasd-controls loading-screen="dotsColor: blue; backgroundColor: black">
 				<a-camera></a-camera>
-				<!-- <a-entity camera look-controls position="0 1.6 0"></a-entity> -->
 				<!-- <a-entity ngl-mol = "mol_entry: rcsb://5ZVL.mmtf;"></a-entity> -->
 				<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity> -->
-				<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity>
+				<!-- <a-entity ngl-mol = "mol_entry: { url_for('static', filename='rcsb/wheat.pdb') }};"></a-entity> -->
+				<a-entity ngl-mol = "mol_entry:{ url_for('static', filename='rcsb/wheat.pdb') }}"></a-entity>
+				<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity> -->
+				<!-- <a-entity ngl-mol="mol_entry:{{ url_for('static', filename='rcsb/wheat.pdb') }};color:element" position="22.727746595179084 0 0" rotation="">
+					<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite">
+					</a-animation>
+				</a-entity> -->
 				<!-- <a-sky color="#ECECEC"></a-sky> -->
 			</a-scene>
 				<!-- <a-scene>
