@@ -96,6 +96,14 @@ def index():
 def sorry():
     return render_template('under_construction.html')
 
+@app.route('/questions')
+def questions():
+    return render_template('questions.html')
+
+@app.route('/experiments')
+def experiments():
+    return render_template('experiments.html')
+
 @app.route('/simulation')
 def simulation():
     return render_template('simulation.html')

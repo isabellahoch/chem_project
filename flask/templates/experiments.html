@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Experiments | LET'S GET THIS BREAD{% endblock %}
+{% block homeisactive %}active{% endblock %}
+{% block head %}
+<style>
+	#the_actual_experiments.col {
+		width:100%;
+	}
+	#the_actual_experiments strong {
+		font-weight:bold !important;
+		font-style:oblique !important;
+	}
+	#the_actual_experiments h2 {
+		padding:25px;
+	}
+</style>
+{% endblock %}
+{% block content %}
+<div class="text-center">
+	<h1>EXPERIMENTS & LABS</h1>
+</div>
+<div class="container" style="padding:2.5%">
+	<div style="padding:5%">
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#yeast" aria-expanded="false" aria-controls="yeast">yEaSt</button>
+	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#heat" aria-expanded="false" aria-controls="heat">hEaT</button>
+	</div>
+	<div class="row" id="the_actual_experiments">
+	  <div class="col">
+	    <div class="collapse" id="yeast">
+	      <div class="card card-body">
+	      	<h2>YEAST</h2>
+	      	<ul>
+	      		<li><strong>PURPOSE: </strong>idk man</li>
+	      		<li><strong>PROCEDURE: </strong>idk man</li>
+	      		<li><strong>HYPOTHESIS: </strong>idk man</li>
+	      		<li><strong>DATA: </strong>idk man</li>
+	      		<li><strong>OBSERVATIONS: </strong>idk man</li>
+	      	</ul>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="col">
+	    <div class="collapse" id="heat">
+	      <div class="card card-body">
+	      	<h2>HEAT</h2>
+	        <ul>
+	      		<li><strong>PURPOSE: </strong>idk man</li>
+	      		<li><strong>PROCEDURE: </strong>idk man</li>
+	      		<li><strong>HYPOTHESIS: </strong>idk man</li>
+	      		<li><strong>DATA: </strong>idk man</li>
+	      		<li><strong>OBSERVATIONS: </strong>idk man</li>
+	      	</ul>
+	      </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+	
+</script>
+{% endblock %}
