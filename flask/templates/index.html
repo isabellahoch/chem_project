@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block title %}LET'S GET THIS BREAD{% endblock %}
 {% block homeisactive %}active{% endblock %}
 {% block content %}
 <div class="container text-center">
@@ -18,6 +17,11 @@
 $( "#enter_simulation" ).click(function() {
   window.location.href = "http://lets-get-this-bread.herokuapp.com/simulation";
 });
+
+</script>
+
+<script>
+	document.title = "LET'S GET THIS BREAD"
 </script>
 {% endblock %}
 {% block head %}

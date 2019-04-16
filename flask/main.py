@@ -108,6 +108,10 @@ def experiments():
 def simulation():
     return render_template('simulation.html')
 
+@app.route('/background')
+def background():
+    return render_template('background.html')
+
 @app.route('/embedded-simulation')
 def embedded_simulation():
     return render_template('actual_simulation.html')

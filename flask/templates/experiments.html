@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Experiments | LET'S GET THIS BREAD{% endblock %}
-{% block homeisactive %}active{% endblock %}
+{% block title %}Experiments{% endblock %}
+{% block experimentsisactive %}active{% endblock %}
 {% block head %}
 <style>
 	#the_actual_experiments.col {
@@ -13,13 +13,16 @@
 	#the_actual_experiments h2 {
 		padding:25px;
 	}
+	strong {
+		text-decoration:underline;
+	}
 </style>
 {% endblock %}
 {% block content %}
 <div class="text-center">
-	<h1>EXPERIMENTS & LABS</h1>
+	<h1>EXPERIMENTS<!--  & LABS --></h1>
 </div>
-<div class="container" style="padding:2.5%">
+<!-- <div class="container" style="padding:2.5%">
 	<div style="padding:5%">
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#yeast" aria-expanded="false" aria-controls="yeast">yEaSt</button>
 	  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#heat" aria-expanded="false" aria-controls="heat">hEaT</button>
@@ -55,6 +58,77 @@
 	    </div>
 	  </div>
 	</div>
+</div> -->
+
+<div class="accordion" id="accordionExample" style="padding:2.5%">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">OBSERVING GLUTEN AT WORK</button>
+			</h5>
+		</div>
+		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+			<div class="card-body">
+				<ul style="/*list-style:none*/">
+		      		<li><strong>PURPOSE:</strong> to observe gluten at work and understand the chemistry of bread dough!</li>
+		      		<li><strong>PROCEDURE:</strong> followed instructions outlined by Margaret Hill in her article <i>Attack of the Gluten</i> in ChemMatters.</li>
+		      		<li><strong>HYPOTHESIS:</strong> the dough will increase in size.</li>
+		      		<li><strong>DATA:</strong>
+		      			<table class="table">
+		      				<thead>
+		      					<tr>
+		      						<th scope="col">#</th>
+		      						<th scope="col">description</th>
+		      						<th scope="col">time</th>
+		      						<th scope="col">mass (g)</th>
+		      					</tr>
+		      				</thead>
+		      				<tbody>
+		      					<tr>
+		      						<th scope="row">1</th>
+		      						<td>pre-proving</td>
+		      						<td>1:29:31 PM</td>
+		      						<td>575 g</td>
+		      					</tr>
+		      					<tr>
+		      						<th scope="row">2</th>
+		      						<td>post-proving</td>
+		      						<td>4:35:46 PM</td>
+		      						<td>545 g</td>
+		      					</tr>
+		      				</tbody>
+		      			</table>
+		      		</li>
+		      		<li><strong>OBSERVATIONS:</strong>
+		      			<ul>
+		      				<li>the dough was quite sticky at first, which made the kneading process very difficult.</li>
+		      				<li>after ~3 hours, the dough increased greatly in size, by a factor of about 3. (while it only took up about 1/2 the bowl initially, after several hours it began to rise over the edges of the bowl.)</li>
+		      				<li>the mass of the dough decreased by 30 g in 3 hours</li>
+		      			</ul>
+		      		</li>
+		      	</ul>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="card">
+		<div class="card-header" id="headingTwo">
+			<h5 class="mb-0">
+				<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">yEaST
+				</button>
+			</h5>
+		</div>
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+			<div class="card-body">
+				<ul>
+		      		<li><strong>PURPOSE:</strong> idk man</li>
+		      		<li><strong>PROCEDURE:</strong> idk man</li>
+		      		<li><strong>HYPOTHESIS:</strong> idk man</li>
+		      		<li><strong>DATA:</strong> idk man</li>
+		      		<li><strong>OBSERVATIONS:</strong> idk man</li>
+		      	</ul>
+			</div>
+		</div>
+	</div> -->
 </div>
 {% endblock %}
 {% block js %}

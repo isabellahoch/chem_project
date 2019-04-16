@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Background Information{% endblock %}
+{% block backgroundisactive %}active{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row text-center align-items-center justify-content-center">
+		<h1>BACKGROUND</h1><br>
+	</div>
+	<div class="row text-center align-items-center justify-content-center">
+		<span><a href="#celiac_disease">celiac disease</a> · <a href="#gluten">gluten</a> · <a href="#kneading">kneading</a> · <a href="#yeast">yeast</a>
+	</div>
+	<div class="row" id="celiac_disease">
+		<h2>celiac disease</h2>
+		<p>Celiac disease is “a condition caused by an abnormal sensitivity to gluten in the diet.” (Hill, <i>Attack of the Gluten</i>) The immune system of people with this disease mistakenly identifies parts of gliadin and glutenin—the two proteins in gluten—as “foreign” and sends out lymphocytes to destroy these “foreign” epitopes. When partially digested gluten enters the bloodstream from the intenstine, a series of reactions triggered by the epitopes results in the release of cykotines, leading to inflammation of the intestinal lining. This causes symptoms such as abdominal paon, diarrhea, skin rashes, and, ultimately, severe intestinal damage.</p>
+	</div>
+	<div class="row" id="gluten">
+		<h2>gluten</h2>
+		<p>Gluten is a substance that gives elasticity to dough and helps it rise. It is found in wheat, rye, barley and oats. It is composed of two proteins, gliadin and glutenin.</p>
+	</div>
+	<div class="row" id="kneading">
+		<h2>kneading</h2>
+		<p>When bread dough is kneaded, the proteins are stretched out and aligned correctly with one another, which facilitates the formation of a network of hydrogen bonds within the dough.</p>
+	</div>
+	<div class="row" id="yeast">
+		<h2>yeast</h2>
+		<p>Yeast are tiny single-celled organisms that feed on sugar in a process called <strong>fermentation</strong> to produce ethanol and carbon dioxide. (* the carbon dioxide causes the dough to increase in volume and rise; the ethanol evaporates when the bread is baked.)</p>
+	</div>
+</div>
+{% endblock %}
+{% block head %}
+<style>
+h2 {
+	text-transform:uppercase;
+}
+</style>
+{% endblock %}
