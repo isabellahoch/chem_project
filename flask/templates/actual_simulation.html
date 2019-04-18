@@ -1,71 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>A-Frame Simulation</title>
-		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
-		<!-- Orbit Controls -->
+{% extends "VR_base.html" %}
+{% block title %}A-Frame Simulation{% endblock %}
+{% block content %}
+		<div class="container">
+			<a-scene look-controls wasd-controls keyboard-shortcuts="enterVR: true">
+				<a-camera></a-camera>
+				<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity>
+				<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity> -->
+			</a-scene>
+		</div>
+{% endblock %}
+{% block head %}
+<!-- <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 		  <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
-	    
-	    <!-- NGL for Aframe proof of concept -->
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/Aframe_component.js"></script>
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/ngl.dev.js"></script>
 	    <style>
 	    .a-loader-title {color: white;}
-		</style>
-	</head>
-	<body>
-		<div class="container">
-			<a-scene look-controls wasd-controls loading-screen="dotsColor: blue; backgroundColor: black">
-				<a-camera></a-camera>
-				<!-- <a-entity ngl-mol = "mol_entry: rcsb://5ZVL.mmtf;"></a-entity> -->
-				<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity> -->
-				<!-- <a-entity ngl-mol = "mol_entry: { url_for('static', filename='rcsb/wheat.pdb') }};"></a-entity> -->
-				<!-- <a-entity ngl-mol = "mol_entry:{ url_for('static', filename='rcsb/wheat.pdb') }}"></a-entity> -->
-				<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity>
-				<!-- <a-entity ngl-mol="mol_entry:{{ url_for('static', filename='rcsb/wheat.pdb') }};color:element" position="22.727746595179084 0 0" rotation="">
-					<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite">
-					</a-animation>
-				</a-entity> -->
-				<!-- <a-sky color="#ECECEC"></a-sky> -->
-			</a-scene>
-				<!-- <a-scene>
-					<a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-					<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-					<a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-					<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
-					<a-sky color="#ECECEC"></a-sky>
-				</a-scene> -->
-			<!-- <a-scene antialias="true" light="defaultLightsEnabled: true">
-				<a-assets>
-					<img crossorigin="anonymous" id="Amino_info" src="https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2F20-Common-Amino-Acids-v3.png?1533324002423">
-					<img crossorigin="anonymous" id="gliadin_info" src="https://previews.123rf.com/images/ermess/ermess1201/ermess120100018/12108070-gliadin-molecule-component-of-gluten-is-a-protein-present-in-wheat-and-other-cereals-it-is-the-toxic.jpg">
-				</a-assets>
-				<a-camera wasd-controls-enabled="false" id="camera" orbit-controls="target: 0 -0.3 -1.5; minDistance: 0.0; maxDistance: 180; initialPosition: 0 0 0; enableKeys: false; rotateSpeed: 0.2; panSpeed: 1; zoomSpeed: 1;"></a-camera>
-				<a-entity position= "0 0.6 -1.5" scale="0.8 0.8 0.8">
-					<a-image src="#gliadin_info" width="2.480" height="1.754" position="0 1 -0.3" scale="" material="color:#ffffff" geometry=""></a-image>
-
-					<a-entity id="Top Row" position="0 1.35 0" scale="0.03 0.03 0.03">
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Falanine.pdb?1533323798609;color:element" position="-22.587279205650038 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Fglycine.pdb?1533323799458;color:element" position="-10.913805152132115 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Fisoleucine.pdb?1533323799888;color:element" position="-0.65 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Fleucine.pdb?1533323800047;color:element" position="11.383110668797766 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Fproline.pdb?1533323800753;color:element" position="22.727746595179084 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-						<a-entity ngl-mol="mol_entry:https://cdn.glitch.com/4df57104-7742-4207-9f26-0bbf4325d928%2Fvaline.pdb?1533323801674;color:element" position="34.59297122306282 0 0" rotation="">
-							<a-animation attribute="rotation" dur="30000" fill="none" easing="linear" to="0 360 0" repeat="indefinite"></a-animation>
-						</a-entity>
-					</a-entity>
-				</a-entity>
-			</a-scene> -->
-		</div>
-	</body>
-</html>
+		</style> -->
+{% endblock %}

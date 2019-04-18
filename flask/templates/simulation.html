@@ -6,5 +6,30 @@
 		<h1>SIMULATION OF WHEAT NONSPECIFIC LIPID TRANSFER PROTEIN adapted from the <a href="https://www.rcsb.org/structure/1GH1">RCSB Protein Data Bank</a></h1>
 	</div>
 	<iframe style="width:100%; height:500px; margin:0" src="/embedded-simulation">oof your browser doesn't support iframes. bitch.</iframe>
+	<!-- <div class="container" style="width:100%; height:500px">
+		<a-scene look-controls wasd-controls keyboard-shortcuts="enterVR: true">
+			<a-camera></a-camera>
+			<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity>
+		</a-scene>
+	</div> -->
+	<div class="row text-center justify-content-center align-items-center" style="padding:2.5%">
+		<button id="enter_vr" class="btn btn-outline">ENTER VR</button>
+		<!-- <p>Press the 'F' key to enter VR.</p> -->
+	</div>
 </div>
+{% endblock %}
+{% block head %}
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<!-- Orbit Controls -->
+<script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
+<!-- NGL for Aframe proof of concept -->
+<script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/Aframe_component.js"></script>
+<script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/ngl.dev.js"></script>
+{% endblock %}
+{% block js %}
+<script>
+	$( "#enter_vr" ).click(function() {
+		window.location = "/embedded-simulation";
+	});
+</script>
 {% endblock %}

@@ -11,17 +11,15 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/vr_style.css') }}">
 		<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
 		<!-- Orbit Controls -->
-		  <script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
+		<script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
 	    
 	    <!-- NGL for Aframe proof of concept -->
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/Aframe_component.js"></script>
 	    <script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/ngl.dev.js"></script>
 	    {% block head %}{% endblock %}
-	    <!-- <style>
-	    .a-loader-title {color: white;}
-		</style> -->
 	</head>
 	<body>
 		{% block js %}{% endblock %}
+		{% block content %}{% endblock %}
 	</body>
 </html>

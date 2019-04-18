@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block title %}Simulation{% endblock %}
+{% block content %}
+<div class="container">
+	<!-- <img src="{{ url_for('static', filename='img/backgrounds/kitchen_drawing.jpg') }}" style="position:absolute">
+	<canvas id="canvas_background" width="500" height="500" style="position:relative">
+		canvas is not supported :(<br> please update your browser.
+	</canvas> -->
+	<img id="bread_clipart" src="{{ url_for('static', filename='img/bread_clipart.png') }}" style="display:none">
+	<div class="col-sm-8">
+		<canvas id="canvas" width="500" height="250">
+			canvas is not supported :(<br> please update your browser.
+		</canvas>
+	</div>
+	<div class="col-sm-4">
+		<form>
+			<!-- <div class="form-check">
+				<input class="form-check-input" type="radio" name="exampleRadios" id="yeast" value="option1" checked>
+				<label class="form-check-label" for="yeast">yeast</label>
+			</div> -->
+			<div class="slidecontainer">
+				<label for="yeast_range">YEAST</label>
+				<input type="range" min="1" max="50" value="25" class="slider" id="yeast_range">
+				<span id="yeast_val"></span>
+			</div>
+			<div class="slidecontainer">
+				<label for="flour_range">FLOUR</label>
+				<input type="range" min="1" max="100" value="50" class="slider" id="flour_range">
+				<span id="flour_val"></span>
+			</div>
+			<div class="slidecontainer">
+				<label for="water_range">WATER (45°C)</label>
+				<input type="range" min="1" max="100" value="50" class="slider" id="water_range">
+				<span id="water_val"></span>
+			</div>
+			<div class="slidecontainer">
+				<label for="salt_range">SALT</label>
+				<input type="range" min="0" max="6" value="3" class="slider" id="salt_range">
+				<span id="salt_val"></span>
+			</div>
+		</form>
+	</div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+	canvas = $("#canvas_background");
+	canvas = document.getElementById("canvas");
+	context = canvas.getContext("2d");
+
+	function draw_projectile(x,y) {
+		context.beginPath();
+		context.arc(x, y, 5, 0, 2*Math.PI);
+		context.fillStyle = "blue";
+		context.fill();
+	}
+
+	function move_projectile(x) {
+		x += 1;
+		draw_projectile();
+		window.setTimeout(move_projectile, 1000/30);
+	}
+
+	draw_projectile(30,80);
+	move_projectile(0);
+
+	ctx = context
+
+
+	var radius = canvas.height / 2;
+	radius = 50
+	ctx.translate(radius, radius);
+	radius = radius * 0.90
+	drawClock();
+
+	function drawClock() {
+	 drawFace(ctx, radius);
+	 drawTime(ctx, radius);
+	}
+
+	function drawFace(ctx, radius) {
+  var grad;
+
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2 * Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+
+  grad = ctx.createRadialGradient(0, 0 ,radius * 0.95, 0, 0, radius * 1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+
+  ctx.beginPath();
+  ctx.arc(0, 0, radius * 0.1, 0, 2 * Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawTime(ctx, radius){
+  var now = new Date();
+  var hour = now.getHours();
+  var minute = now.getMinutes();
+  var second = now.getSeconds();
+  //hour
+  hour = hour%12;
+  hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
+  drawHand(ctx, hour, radius*0.5, radius*0.07);
+  //minute
+  minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+  drawHand(ctx, minute, radius*0.8, radius*0.07);
+  // second
+  second = (second*Math.PI/30);
+  drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+  ctx.beginPath();
+  ctx.lineWidth = width;
+  ctx.lineCap = "round";
+  ctx.moveTo(0,0);
+  ctx.rotate(pos);
+  ctx.lineTo(0, -length);
+  ctx.stroke();
+  ctx.rotate(-pos);
+}
+
+setInterval(drawClock, 1000);
+
+</script>
+<script>
+
+window.onload = function() {
+  var c = document.getElementById("canvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("bread_clipart");
+  ctx.drawImage(img, canvas.width / 2 - img.width / 2, canvas.height / 2 - img.height / 2);
+};
+
+</script>
+<script>
+
+$(".slidecontainer").each(function() {
+  $(this).addClass("text-center justify-content-center align-items-center")
+});
+
+var ingredients = {}
+
+function slider_label_union(item,unit) {
+	ingredients[item]={"amount":$("#"+item+"_range").val(),"unit":unit}
+	$("#"+item+"_val").text($("#"+item+"_range").val()+" "+unit)
+	$('#'+item+'_range').on('input', function () {
+		ingredients[item]["amount"] = $("#"+item+"_range").val();
+		$("#"+item+"_val").text($("#"+item+"_range").val()+" "+unit)
+	});
+}
+
+slider_label_union("yeast","g");
+slider_label_union("flour","g");
+slider_label_union("water","mL");
+slider_label_union("salt","tsp");
+
+
+// $("#yeast_val").text($("#yeast_range").val()+" g")
+
+// $('#yeast_range').on('input', function () {
+//     $("#yeast_val").text($("#yeast_range").val()+" g");
+// });
+  
+</script>
+{% endblock %}

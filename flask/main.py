@@ -114,6 +114,14 @@ def background():
 
 @app.route('/embedded-simulation')
 def embedded_simulation():
+    return render_template('embedded_simulation.html')
+
+@app.route('/bread-simulation')
+def bread_simulation():
+    return render_template('bread_simulation.html')
+
+@app.route('/actual-simulation')
+def actual_simulation():
     return render_template('actual_simulation.html')
 
 @app.route('/other-simulation')

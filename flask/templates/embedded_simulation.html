@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Simulation{% endblock %}
+{% block content %}
+<div class="container">
+	<div class="row text-center" style="padding:2.5%">
+		<h1>SIMULATION OF WHEAT NONSPECIFIC LIPID TRANSFER PROTEIN adapted from the <a href="https://www.rcsb.org/structure/1GH1">RCSB Protein Data Bank</a></h1>
+	</div>
+	<!-- <iframe style="width:100%; height:500px; margin:0" src="/embedded-simulation">oof your browser doesn't support iframes. bitch.</iframe> -->
+	<div class="container" style="width:100%; height:500px">
+		<a-scene look-controls wasd-controls keyboard-shortcuts="enterVR: true">
+			<a-camera></a-camera>
+			<!-- <a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;"></a-entity> -->
+			<a-entity ngl-mol = "mol_entry: rcsb://1GH1.mmtf;representation:ball+stick"></a-entity>
+		</a-scene>
+	</div>
+	<div class="row text-center" style="padding:2.5%">
+		<p>Press the 'F' key to enter VR.</p>
+	</div>
+</div>
+{% endblock %}
+{% block head %}
+<script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+<!-- Orbit Controls -->
+<script src="https://unpkg.com/aframe-orbit-controls@1.0.0/dist/aframe-orbit-controls.min.js"></script>
+<!-- NGL for Aframe proof of concept -->
+<script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/Aframe_component.js"></script>
+<script src="https://cdn.rawgit.com/KJStrand/ngl/AFRAME-NGL/dist/ngl.dev.js"></script>
+{% endblock %}
+{% block js %}
+<script>
+
+	function getUrlVars() {
+	    var vars = {};
+	    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,    
+	    function(m,key,value) {
+	      vars[key] = value;
+	    });
+	    return vars;
+	 }
+
+	 function enterVR() {
+	 	console.log("i need to make this an actual function hehe")
+	 	$(".a-enter-vr-button").trigger("click");
+	 }
+
+	 $(document).ready(function() {
+		alert("PRESS F OR THE BUTTON IN THE BOTTOM RIGHT CORNER TO ENTER VR :)")
+		// if (getUrlVars()["vr"] == "true") {
+		// 	console.log("mmk the user wants to enter VR")
+		// 	enterVR()
+		// }
+	});
+
+	 // document.querySelector('a-scene').addEventListener('loaded', function () {
+	 // 	if (getUrlVars()["vr"] == "true") {
+		// 	console.log("mmk the user wants to enter VR")
+		// 	enterVR()
+		// }
+	 // })
+
+	 document.querySelector('a-scene').addEventListener('enter-vr', function () {
+	 	console.log("ENTERED VR");
+	 });
+</script>
+{% endblock %}
