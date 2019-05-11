@@ -60,14 +60,14 @@
 	</div>
 </div> -->
 
-<div class="accordion" id="accordionExample" style="padding:2.5%">
+<div class="accordion" id="accordion" style="padding:2.5%">
 	<div class="card">
 		<div class="card-header" id="headingOne">
 			<h5 class="mb-0">
 				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">OBSERVING GLUTEN AT WORK</button>
 			</h5>
 		</div>
-		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
 			<div class="card-body">
 				<ul style="/*list-style:none*/">
 		      		<li><strong>PURPOSE:</strong> to observe gluten at work and understand the chemistry of bread dough!</li>
@@ -110,6 +110,57 @@
 			</div>
 		</div>
 	</div>
+		<div class="card">
+		<div class="card-header" id="heading_2">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">TESTING LEAVENING AGENTS</button>
+			</h5>
+		</div>
+		<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion">
+			<div class="card-body">
+				<ul style="/*list-style:none*/">
+					<span>* find more info on this experiment on the <a href="{{ url_for('leavening_agents')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">LEAVENING AGENTS</a> page! *</span><br>
+		      		<li><strong>PURPOSE:</strong> to determine the most efficient leavening agent for bread</li>
+		      		<li><strong>PROCEDURE:</strong> hehe i didn't really have a procedure :)</li>
+		      		<li><strong>HYPOTHESIS:</strong> the dough made using yeast activated with honey will have the highest overall rise</li>
+		      		<li><strong>DATA:</strong>
+		      			<span>see <a href="{{ url_for('leavening_agents_data')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">this page</a>for data!</span>
+		      			<!-- <table class="table">
+		      				<thead>
+		      					<tr>
+		      						<th scope="col">#</th>
+		      						<th scope="col">description</th>
+		      						<th scope="col">time</th>
+		      						<th scope="col">mass (g)</th>
+		      					</tr>
+		      				</thead>
+		      				<tbody>
+		      					<tr>
+		      						<th scope="row">1</th>
+		      						<td>pre-proving</td>
+		      						<td>1:29:31 PM</td>
+		      						<td>575 g</td>
+		      					</tr>
+		      					<tr>
+		      						<th scope="row">2</th>
+		      						<td>post-proving</td>
+		      						<td>4:35:46 PM</td>
+		      						<td>545 g</td>
+		      					</tr>
+		      				</tbody>
+		      			</table> -->
+		      		</li>
+		      		<!-- <li><strong>OBSERVATIONS:</strong>
+		      			<ul>
+		      				<li>the dough was quite sticky at first, which made the kneading process very difficult.</li>
+		      				<li>after ~3 hours, the dough increased greatly in size, by a factor of about 3. (while it only took up about 1/2 the bowl initially, after several hours it began to rise over the edges of the bowl.)</li>
+		      				<li>the mass of the dough decreased by 30 g in 3 hours</li>
+		      			</ul>
+		      		</li> -->
+		      	</ul>
+			</div>
+		</div>
+	</div>
 	<!-- <div class="card">
 		<div class="card-header" id="headingTwo">
 			<h5 class="mb-0">
@@ -117,7 +168,7 @@
 				</button>
 			</h5>
 		</div>
-		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 			<div class="card-body">
 				<ul>
 		      		<li><strong>PURPOSE:</strong> idk man</li>

@@ -104,6 +104,14 @@ def questions():
 def experiments():
     return render_template('experiments.html')
 
+@app.route('/leavening-agents')
+def leavening_agents():
+    return render_template('leavening_agents.html')
+
+@app.route('/leavening-agents/data')
+def leavening_agents_data():
+    return render_template('leavening_agents_data.html')
+
 @app.route('/simulation')
 def simulation():
     return render_template('simulation.html')
