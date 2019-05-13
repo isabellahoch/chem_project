@@ -21,6 +21,8 @@ body {
     --background-color-secondary: rgb(244,244,244) !important; 
     --background-color-old: #efefef !important; 
     --highlight-color: #85cfff !important; 
+    --main-color: #000 !important;
+    --hover-color: #fff !important;
   }
 
 [class^="entypo-"]:before,
@@ -57,7 +59,7 @@ nav {
 
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
     background-color: inherit;
-    color: #4eb7c0;
+    color: var(--hover-color);
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -84,8 +86,9 @@ nav {
 }
 
 a:hover {
-  color: var(--main-color) !important;
-  text-decoration: underline;
+  /*color: var(--main-color) !important;*/
+  color: #fff !important;
+  /*text-decoration: underline;*/
 }
 
 nav-link:hover {
@@ -94,7 +97,7 @@ nav-link:hover {
 
 .link:hover {
   color: var(--main-color) !important;
-  text-decoration: underline !important;
+  t/*ext-decoration: underline !important;*/
 }
 
 .link {
@@ -326,4 +329,8 @@ hr {
 #aarushipic, #isabellapic, #sriyapic {
     height: 200px !important;
     width: 200px !important;
+}
+
+footer {
+  line-height: 1.5 !important;
 }

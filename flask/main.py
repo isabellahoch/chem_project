@@ -136,6 +136,10 @@ def actual_simulation():
 def other_simulation():
     return render_template('other_simulation.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/bibliography')
 def bibliography():
     return render_template('bibliography.html')

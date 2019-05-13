@@ -16,6 +16,12 @@
 	strong {
 		text-decoration:underline;
 	}
+
+	#collapse_2 a {
+		background-color:lightsteelblue !important;
+		padding-left:2.5px !important; 
+		padding-right:2.5px !important;
+	}
 </style>
 {% endblock %}
 {% block content %}
@@ -119,12 +125,32 @@
 		<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion">
 			<div class="card-body">
 				<ul style="/*list-style:none*/">
-					<span>* find more info on this experiment on the <a href="{{ url_for('leavening_agents')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">LEAVENING AGENTS</a> page! *</span><br>
-		      		<li><strong>PURPOSE:</strong> to determine the most efficient leavening agent for bread</li>
-		      		<li><strong>PROCEDURE:</strong> hehe i didn't really have a procedure :)</li>
+					<span style="display:none">* find more info on this experiment on the <a href="{{ url_for('leavening_agents')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">LEAVENING AGENTS</a> page! *</span><br>
+		      		<li><strong>PURPOSE:</strong> to determine which leavening agent (no yeast, <a href="/background#yeast">yeast</a>, <a href="/background#yeast_honey">yeast w/ honey</a>, <a href="/background#sourdough">sourdough starter</a>, <a href="/background#baking_soda">baking soda</a>, <a href="/background#baking_powder">baking powder</a>) produces the highest rise of bread dough and is most efficient.</li>
+		      		<li><strong>MATERIALS:</strong>
+		      			<ul>
+		      				<li>6 ・ 3 ½ cups flour</li>
+		      				<li>6 ・1 tbsp sugar</li>
+		      				<li>6 ・1 tbsp salt</li>
+		      				<li>2 ・7 g yeast</li>
+		      				<li>6 ・300 mL water at 30° C</li>
+		      				<li>tbsp measuring spoon</li>
+		      				<li>6 graduated plastic containers</li>
+		      				<li>6 mixing spoons/spatulas</li>
+		      				<li>6 baking pans</li>
+		      			</ul>
+		      		</li>
+		      		<li><strong>PROCEDURE:</strong>
+		      			<ol>
+		      				<li>In a large bowl, combine warm water, yeast, salt, oil, sugar and 4 cups of flour. Mix thoroughly and let dough rise until doubled in size.</li>
+		      				<li>Gradually add about 4 cups flour, kneading until smooth. Place dough in a greased bowl and turn several times to coat. Cover with a damp cloth and let rise until doubled in size.
+		      				</li>
+		      				<li>Punch down the dough and let it rest a few minutes. Divide into 3 equal parts, shape each into a loaf and place in a bread pan. Let rise until doubled in size.</li>
+		      				<li>Bake at 350˚ for 35-45 minutes.</li>
+		      			</ol></li>
 		      		<li><strong>HYPOTHESIS:</strong> the dough made using yeast activated with honey will have the highest overall rise</li>
 		      		<li><strong>DATA:</strong>
-		      			<span>see <a href="{{ url_for('leavening_agents_data')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">this page</a>for data!</span>
+		      			<span>see <a href="{{ url_for('leavening_agents_data')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">this page</a> for data!</span>
 		      			<!-- <table class="table">
 		      				<thead>
 		      					<tr>

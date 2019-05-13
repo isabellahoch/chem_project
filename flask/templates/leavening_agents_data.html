@@ -5,5 +5,75 @@
 <div class="text-center">
 	<h1>LEAVENING AGENTS EXPERIMENT - DATA</h1>
 </div>
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" style="width: 100%; margin: 2.5%; padding: 1%; height: 600px;"></iframe>
+<br><br>
+<div class="container align-items-center justify-content-center">
+	<div id="table" class="container align-items-center justify-content-center" style="width:fit-content; height:fit-content">
+		<iframe id="data_table" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+	</div>
+	<br><br>
+	<div id="charts" class="container align-items-center justify-content-center" style="width:80vw; /*height:fit-content*/">
+		<div class="iframe-container row align-items-center justify-content-center">
+			<iframe class="embedded_chart" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubchart?oid=1258876640&amp;format=interactive"></iframe>
+		</div>
+<!-- 		<br><br> -->
+		<div class="iframe-container row align-items-center justify-content-center">
+			<iframe class="embedded_chart" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubchart?oid=1707375136&amp;format=interactive"></iframe>
+		</div>
+	</div>
+</div>
+{% endblock %}
+{% block head %}
+<style>
+iframe {
+    width:100%;
+}
+
+.embedded_chart {
+	width:;
+}
+
+#data_table {
+	width:750px;
+	height:500px;
+	/*width: 1000px; margin: 2.5%; padding: 1%; height: 600px;*/
+}
+
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+ 
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+</style>
+<style>
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: #24B1E6;
+}
+</style>
+{% endblock %}
+{% block js %}
+<script>
+jQuery(document).ready(function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
+ });
+</script>
 {% endblock %}
