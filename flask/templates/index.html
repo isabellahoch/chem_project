@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container text-center">
 	<div class="row align-items-center justify-content-center">
-        <p style="font-size:100px; color:#000">LET'S GET THIS BREAD</p>
+        <p style="font-size:100px; color:#000">LET'S GET THIS BREAD<span class='footnote' data-toggle="tooltip" title="" id="urban_dictionary_footnote"></span></p>
         <button id="enter_simulation" class="hover-btn" style="width:min-content"><span>ENTER SIMULATION</span></button>
     </div>
 	<div class="row text-center align-items-center justify-content-center">
@@ -11,18 +11,6 @@
 	</div>
 	<hr>
 </div>
-{% endblock %}
-{% block js %}
-<script>
-$( "#enter_simulation" ).click(function() {
-  window.location.href = "http://lets-get-this-bread.herokuapp.com/simulation";
-});
-
-</script>
-
-<script>
-	document.title = "LET'S GET THIS BREAD"
-</script>
 {% endblock %}
 {% block head %}
 <style>
@@ -87,4 +75,46 @@ hr {
 	border-width: 2px;
 }
 </style>
+
+<style>
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: #24B1E6;
+}
+</style>
+
+{% endblock %}
+{% block js %}
+
+<script>
+$( "#enter_simulation" ).click(function() {
+  window.location.href = "http://lets-get-this-bread.herokuapp.com/simulation";
+});
+
+</script>
+
+<script>
+	document.title = "LET'S GET THIS BREAD"
+</script>
+
+<script>
+new_title = 'Chris, Breadman. "A phrase originally used to mean '+"'let's get money' as bread=dough and dough is a common slang term for money. Nowadays, the term 'let's get this bread' is more loosely defined as a sort of battlecry in  a sense..."+'"'+ "Urban Dictionary, 22 Oct. 2018, <a href='http://lets-get-this-bread.urbanup.com/13292211'>http://lets-get-this-bread.urbanup.com/13292211</a>."
+console.log(new_title)
+$('#urban_dictionary_footnote').prop('title', new_title);
+</script>
+<script>
+jQuery(document).ready(function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
+ });
+</script>
 {% endblock %}

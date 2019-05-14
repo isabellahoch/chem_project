@@ -53,27 +53,5 @@ iframe {
    width: 100%;
 }
 </style>
-<style>
-body {
-    counter-reset: footnotecounter;
-}
 
-span.footnote:before {
-  counter-increment: footnotecounter;
-  content: counter(footnotecounter);
-  position: relative;
-  top: -0.4em;
-}
-
-span.footnote {
-    color: #24B1E6;
-}
-</style>
-{% endblock %}
-{% block js %}
-<script>
-jQuery(document).ready(function() {
-  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
- });
-</script>
 {% endblock %}
