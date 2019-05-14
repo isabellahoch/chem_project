@@ -43,7 +43,7 @@ span.footnote {
 {% endblock %}
 {% block content %}
 <div class="text-center">
-	<h1>EXPERIMENTS<!--  & LABS --></h1>
+	<h1>EXPERIMENT<!--  & LABS --></h1>
 </div>
 <!-- <div class="container" style="padding:2.5%">
 	<div style="padding:5%">
@@ -85,61 +85,12 @@ span.footnote {
 
 <div class="accordion" id="accordion" style="padding:2.5%">
 	<div class="card">
-		<div class="card-header" id="headingOne">
-			<h5 class="mb-0">
-				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">OBSERVING GLUTEN AT WORK</button>
-			</h5>
-		</div>
-		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-			<div class="card-body">
-				<ul style="/*list-style:none*/">
-		      		<li><strong>PURPOSE:</strong> to observe gluten at work and understand the chemistry of bread dough!</li>
-		      		<li><strong>PROCEDURE:</strong> followed instructions outlined by Margaret Hill in her article <i>Attack of the Gluten</i> in ChemMatters.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span></li>
-		      		<li><strong>HYPOTHESIS:</strong> the dough will increase in size.</li>
-		      		<li><strong>DATA:</strong>
-		      			<table class="table">
-		      				<thead>
-		      					<tr>
-		      						<th scope="col">#</th>
-		      						<th scope="col">description</th>
-		      						<th scope="col">time</th>
-		      						<th scope="col">mass (g)</th>
-		      					</tr>
-		      				</thead>
-		      				<tbody>
-		      					<tr>
-		      						<th scope="row">1</th>
-		      						<td>pre-proving</td>
-		      						<td>1:29:31 PM</td>
-		      						<td>575 g</td>
-		      					</tr>
-		      					<tr>
-		      						<th scope="row">2</th>
-		      						<td>post-proving</td>
-		      						<td>4:35:46 PM</td>
-		      						<td>545 g</td>
-		      					</tr>
-		      				</tbody>
-		      			</table>
-		      		</li>
-		      		<li><strong>OBSERVATIONS:</strong>
-		      			<ul>
-		      				<li>the dough was quite sticky at first, which made the kneading process very difficult.</li>
-		      				<li>after ~3 hours, the dough increased greatly in size, by a factor of about 3. (while it only took up about 1/2 the bowl initially, after several hours it began to rise over the edges of the bowl.)</li>
-		      				<li>the mass of the dough decreased by 30 g in 3 hours</li>
-		      			</ul>
-		      		</li>
-		      	</ul>
-			</div>
-		</div>
-	</div>
-		<div class="card">
 		<div class="card-header" id="heading_2">
 			<h5 class="mb-0">
-				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">TESTING LEAVENING AGENTS</button>
+				<button class="btn btn-link" type="button" data-toggle="collapse show" data-target="#collapse_2" aria-expanded="true" aria-controls="collapse_2">TESTING LEAVENING AGENTS</button>
 			</h5>
 		</div>
-		<div id="collapse_2" class="collapse" aria-labelledby="heading_2" data-parent="#accordion">
+		<div id="collapse_2" class="collapse show" aria-labelledby="heading_2" data-parent="#accordion">
 			<div class="card-body">
 				<ul style="/*list-style:none*/">
 					<span style="display:none">* find more info on this experiment on the <a href="{{ url_for('leavening_agents')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">LEAVENING AGENTS</a> page! *</span><br>
@@ -168,9 +119,20 @@ span.footnote {
 		      			</ol></li>
 		      		<li><strong>RESULTS:</strong>
 		      			<p>As I predicted, the loaf with <a href="/background#yeast_honey">yeast + honey</a> as the leavening agent (#3) had the highest rise. The next highest was #2, the bread made with <a href="/background#yeast">yeast</a>, followed by <a href="/background#sourdough">sourdough</a>. This makes sense as for all three of these processes, what occurred was <a href="/background#yeast">fermentation</a>. Next was the combination of <a href="/background#baking_soda">baking soda</a> and citric acid, which rose the same amount as the loaf with <a href="/background#baking_powder">baking powder</a>. Finally, the bread with no leavening agents had a negligible rise and could nearly be considered inedible.</p>
+		      			<div class="row align-items-center justify-content-center">
+		      				<img style="max-width:90%" src="{{ url_for('static', filename='experiments/testing-leavening-agents/beautiful_image.jpg') }}">
+		      			</div><br>
 		      		</li>
 		      		<li><strong>DATA:</strong>
-		      			<span>see <a href="{{ url_for('leavening_agents_data')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">this page</a> for data!</span>
+		      			<!-- <span>see <a href="{{ url_for('leavening_agents_data')}}" style="background-color:lightsteelblue; padding-left:2.5px; padding-right:2.5px">this page</a> for data!</span> -->
+		      			<div class="container align-items-center justify-content-center">
+							<div id="table" class="container align-items-center justify-content-center">
+								<iframe style="width:95%; height:500px" id="data_table" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+							</div>
+							<div id="charts" class="iframe-container row align-items-center justify-content-center">
+								<iframe style="width:95%; height:500px" class="embedded_chart" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTmR2KfMzHlZfytr2ypEIWV2ALIc3kc4JAPJIwU-HzIDBae2QnyDVBdn_iyqB4V1NoZriC6sx0V_yhe/pubchart?oid=1258876640&amp;format=interactive"></iframe>
+							</div>
+						</div>
 		      			<!-- <table class="table">
 		      				<thead>
 		      					<tr>

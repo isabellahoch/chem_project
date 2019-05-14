@@ -112,6 +112,14 @@ def leavening_agents():
 def leavening_agents_data():
     return render_template('leavening_agents_data.html')
 
+@app.route('/leavening-agents/photos')
+def leavening_agents_photos():
+    return render_template('additional_photos.html')
+
+@app.route('/beyond-bread')
+def implications():
+    return render_template('implications.html')
+
 @app.route('/simulation')
 def simulation():
     return render_template('simulation.html')
