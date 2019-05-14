@@ -100,9 +100,9 @@ def sorry():
 def questions():
     return render_template('questions.html')
 
-@app.route('/experiments')
-def experiments():
-    return render_template('experiments.html')
+@app.route('/experiment')
+def experiment():
+    return render_template('experiment.html')
 
 @app.route('/leavening-agents')
 def leavening_agents():
@@ -139,6 +139,10 @@ def other_simulation():
 @app.route('/about')
 def about():
     return render_template('about.html')
+
+@app.route('/additional-materials')
+def other():
+    return render_template('other.html')
 
 @app.route('/bibliography')
 def bibliography():

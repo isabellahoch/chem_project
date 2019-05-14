@@ -1,0 +1,251 @@
+{% extends "base.html" %}
+{% block title %}Experiments{% endblock %}
+{% block otherisactive %}active{% endblock %}
+{% block head %}
+<style>
+	#the_actual_experiments.col {
+		width:100%;
+	}
+	#the_actual_experiments strong {
+		font-weight:bold !important;
+		font-style:oblique !important;
+	}
+	#the_actual_experiments h2 {
+		padding:25px;
+	}
+	strong {
+		text-decoration:underline;
+	}
+
+	#collapse_2 a {
+		background-color:lightsteelblue !important;
+		padding-left:2.5px !important; 
+		padding-right:2.5px !important;
+	}
+</style>
+
+<style>
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: #24B1E6;
+}
+</style>
+
+<style>
+.hover-btn {
+  border-radius: 4px;
+  background-color: #5ca1e1;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  padding: 16px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 36px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+}
+
+.hover-btn{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hover-btn:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 14px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hover-btn:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+.hover-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<div class="text-center">
+	<h1 id="observing_gluten_at_work">OBSERVING GLUTEN AT WORK EXPERIMENT</h1>
+</div>
+<div class="accordion" id="accordion" style="padding:2.5%">
+	<div class="card">
+		<div class="card-header" id="heading_purpose">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_purpose" aria-expanded="true" aria-controls="collapse_purpose">PURPOSE</button>
+			</h5>
+		</div>
+		<div id="collapse_purpose" class="collapse" aria-labelledby="heading_purpose" data-parent="#accordion">
+			<div class="card-body">
+				<p>to observe gluten at work and understand the chemistry of bread dough!</p>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="heading_procedure">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_procedure" aria-expanded="true" aria-controls="collapse_procedure">PROCEDURE</button>
+			</h5>
+		</div>
+		<div id="collapse_procedure" class="collapse" aria-labelledby="heading_procedure" data-parent="#accordion">
+			<div class="card-body">
+				<p>followed instructions outlined by Margaret Hill in her article <i>Attack of the Gluten</i> in ChemMatters.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span></p>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="heading_hypothesis">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_hypothesis" aria-expanded="true" aria-controls="collapse_hypothesis">HYPOTHESIS</button>
+			</h5>
+		</div>
+		<div id="collapse_hypothesis" class="collapse" aria-labelledby="heading_hypothesis" data-parent="#accordion">
+			<div class="card-body">
+				<p>The dough will increase in size.</p>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="heading_data">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_data" aria-expanded="true" aria-controls="collapse_data">DATA</button>
+			</h5>
+		</div>
+		<div id="collapse_data" class="collapse" aria-labelledby="heading_data" data-parent="#accordion">
+			<div class="card-body">
+				<table class="table">
+      				<thead>
+      					<tr>
+      						<th scope="col">#</th>
+      						<th scope="col">description</th>
+      						<th scope="col">time</th>
+      						<th scope="col">mass (g)</th>
+      					</tr>
+      				</thead>
+      				<tbody>
+      					<tr>
+      						<th scope="row">1</th>
+      						<td>pre-proving</td>
+      						<td>1:29:31 PM</td>
+      						<td>575 g</td>
+      					</tr>
+      					<tr>
+      						<th scope="row">2</th>
+      						<td>post-proving</td>
+      						<td>4:35:46 PM</td>
+      						<td>545 g</td>
+      					</tr>
+      				</tbody>
+      			</table>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="heading_observations">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_observations" aria-expanded="true" aria-controls="collapse_observations">OBSERVATIONS</button>
+			</h5>
+		</div>
+		<div id="collapse_observations" class="collapse" aria-labelledby="heading_observations" data-parent="#accordion">
+			<div class="card-body">
+				<ul>
+	  				<li>the dough was quite sticky at first, which made the kneading process very difficult.</li>
+	  				<li>after ~3 hours, the dough increased greatly in size, by a factor of about 3. (while it only took up about 1/2 the bowl initially, after several hours it began to rise over the edges of the bowl.)</li>
+	  				<li>the mass of the dough decreased by 30 g in 3 hours</li>
+	  			</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <div class="accordion" id="accordion" style="padding:2.5%">
+	<div class="card">
+		<div class="card-header" id="headingOne">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">OBSERVING GLUTEN AT WORK</button>
+			</h5>
+		</div>
+		<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+			<div class="card-body">
+				<ul style="/*list-style:none*/">
+		      		<li><strong>PURPOSE:</strong> to observe gluten at work and understand the chemistry of bread dough!</li>
+		      		<li><strong>PROCEDURE:</strong> followed instructions outlined by Margaret Hill in her article <i>Attack of the Gluten</i> in ChemMatters.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span></li>
+		      		<li><strong>HYPOTHESIS:</strong> the dough will increase in size.</li>
+		      		<li><strong>DATA:</strong>
+		      			<table class="table">
+		      				<thead>
+		      					<tr>
+		      						<th scope="col">#</th>
+		      						<th scope="col">description</th>
+		      						<th scope="col">time</th>
+		      						<th scope="col">mass (g)</th>
+		      					</tr>
+		      				</thead>
+		      				<tbody>
+		      					<tr>
+		      						<th scope="row">1</th>
+		      						<td>pre-proving</td>
+		      						<td>1:29:31 PM</td>
+		      						<td>575 g</td>
+		      					</tr>
+		      					<tr>
+		      						<th scope="row">2</th>
+		      						<td>post-proving</td>
+		      						<td>4:35:46 PM</td>
+		      						<td>545 g</td>
+		      					</tr>
+		      				</tbody>
+		      			</table>
+		      		</li>
+		      		<li><strong>OBSERVATIONS:</strong>
+		      			<ul>
+		      				<li>the dough was quite sticky at first, which made the kneading process very difficult.</li>
+		      				<li>after ~3 hours, the dough increased greatly in size, by a factor of about 3. (while it only took up about 1/2 the bowl initially, after several hours it began to rise over the edges of the bowl.)</li>
+		      				<li>the mass of the dough decreased by 30 g in 3 hours</li>
+		      			</ul>
+		      		</li>
+		      	</ul>
+			</div>
+		</div>
+	</div> -->	
+<!-- </div> -->
+<div class="row align-items-center justify-content-center text-center">
+	<h1 style="width:100%" id="gluten_simulation">GLUTEN SIMULATION</h1><br>
+    <button id="enter_simulation" class="hover-btn" style="width:min-content"><span>ENTER SIMULATION</span></button>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+jQuery(document).ready(function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
+ });
+</script>
+
+<script>
+$( "#enter_simulation" ).click(function() {
+  window.location.href = "http://lets-get-this-bread.herokuapp.com/simulation";
+});
+
+</script>
+{% endblock %}
