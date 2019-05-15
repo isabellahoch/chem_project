@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block title %}Background Information{% endblock %}
+{% block title %}Process{% endblock %}
+{% block backgroundisactive %}active{% endblock %}
 {% block content %}
 <div class="container">
 	<div class="row text-center align-items-center justify-content-center">
-		<h1>BACKGROUND</h1><br>
+		<h1>MAKING BREAD</h1><br>
 	</div>
 	<div class="row text-center align-items-center justify-content-center">
 		<span><a href="#history">history</a> · <a href="#celiac_disease">celiac disease</a> · <a href="#gluten">gluten</a> · <a href="#kneading">kneading</a>
@@ -78,13 +79,35 @@
 	</div>
 	<div class="row" id="baking_soda">
 		<h3>baking soda</h3>
-		<p>This is an acid-base reaction. Baking soda reacts with an acid (in the case of <a href="/experiment">this experiment</a> I used lemon juice, also known as citric acid) to create carbon dioxide and water: <span class="chemical_equation">3NaHCO<sub>3</sub>+C<sub>6</sub>H<sub>8</sub>O<sub>7</sub> ⟶ 3Na<sup>+</sup>+C<sub>6</sub>H<sub>5</sub>O<sub>7</sub><sup>3-</sup>+3H<sub>2</sub>O+3CO<sub>2</sub></span>.<span class='footnote' data-toggle="tooltip" title="'What's New, CO2 ? Get to Know a Chemical Reaction.' American Chemical Society, 2009, www.acs.org/content/dam/acsorg/education/outreach/kidschemistry/chemical-reaction-kids-and-chemistry-kit-teacher-guide.pdf. Accessed 15 May 2019.'"></span>
+		<p>This is an acid-base reaction. Baking soda reacts with an acid (in the case of my experiment I used lemon juice, also known as citric acid) to create carbon dioxide and water: <span class="chemical_equation">H<sub>3</sub>C<sub>6</sub>H<sub>5</sub>O<sub>7</sub>+3HCO<sub>3</sub>− ⟶ C<sub>6</sub>H<sub>5</sub>O<sub>73</sub>−+3H<sub>2</sub>O+3CO<sub>2</sub></span>.
 		</p>
 	</div>
 	<div class="row" id="baking_powder">
 		<h3>baking powder</h3>
 		<p>Baking powder produces CO<sub>2</sub> in a way similar to <a href="#baking_soda">baking soda</a>, only it does not require the addition of a separate acid as it already contains a dry acid. It is composed of <a href="#baking_soda">baking soda</a> (sodium bicarbonate, NaHCO<sub>3</sub>) and a dry acid, usually cream of tartar (KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>. After the addition of a water-based ingredient, these substances react to form CO<sub>2</sub> <i>(g)</i> and other products: <span class="chemical_equation">NaHCO<sub>3</sub> + KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub> → KNaC<sub>4</sub>H<sub>4</sub>O<sub>6</sub> + H<sub>2</sub>O + CO<sub>2</sub></span>. There are two common types of baking powder that you can find on the shelf: single-acting and double-acting. Single-acting powder reacts to form carbon dioxide when the dough is mixed, whereas double-acting powder also makes CO2 when the mixture is heated.
 		</p>
+	</div>
+	<div class="row text-center align-items-center justify-content-center" id="connections">
+		<h1>CONNECTIONS</h1><br>
+	</div>
+	<div class="row text-center align-items-center justify-content-center">
+		<span><a href="#learning_goals">learning goals</a> · <a href="#enduring_understandings">enduring understandings</a></span>
+	</div>
+	<div class="row" id="learning_goals">
+		<h3>learning goals</h3>
+		<ul>
+			<li><strong>8.1</strong>  The physical properties of hydrocarbons and other organic molecules depend on their chemical structures and ability to engage in intermolecular attractions. <span class="comment">(many of the substances involved in breadmaking are organic molecules)</span></li>
+			<li><strong>6.3</strong>  The unique ability of hydrogen ions  to participate in polar covalent bonds but also to ionize and transfer between chemicals leads to acid-base reactions. <span class="comment">(the chemical processes for baking soda and baking powder are acid-base reactions)</span></li>
+			<li><strong>5.3</strong> Because solutions are mixtures (not pure substances), they can be made with varying amounts of solute and solvent. <span class="comment">(experimenting with different concentrations of ingredients in baking; dissolving yeast/flour in water)</span></li>
+		</ul>
+	</div>
+	<div class="row" id="enduring_understandings">
+		<h3>enduring understandings</h3>
+		<ul>
+			<li><strong>#3</strong>: Chemistry can be understood and described at the macroscopic (observable) level, the submicroscopic (particle) level, and the symbolic level. Making connections between these three is crucial to developing true understanding of chemical phenomena.
+			</li>
+			<li><strong>#5</strong>: Chemical reactions require particle collisions to occur, in the correct orientation and with sufficient energy. This means that reaction conditions can be manipulated to change the rate of the reaction.</li>
+		</ul>
 	</div>
 </div>
 {% endblock %}

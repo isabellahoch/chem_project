@@ -86,7 +86,7 @@ span.footnote {
 {% endblock %}
 {% block content %}
 <div class="text-center">
-	<h1 id="observing_gluten_at_work">OBSERVING GLUTEN AT WORK (PRELIMINARY EXPERIMENT)</h1>
+	<h1 id="observing_gluten_at_work">PRELIMINARY EXPERIMENT:<br>OBSERVING GLUTEN AT WORK</h1>
 </div>
 <div class="accordion" id="accordion" style="padding:2.5%">
 	<div class="card">
@@ -157,6 +157,27 @@ span.footnote {
       					</tr>
       				</tbody>
       			</table>
+			</div>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header" id="heading_photos">
+			<h5 class="mb-0">
+				<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse_photos" aria-expanded="true" aria-controls="collapse_photos">PHOTOS</button>
+			</h5>
+		</div>
+		<div id="collapse_photos" class="collapse" aria-labelledby="heading_photos" data-parent="#accordion">
+			<div class="card-body">
+	  			<div class="row align-items-center justify-content-center">
+	  				<div class="col sm-6">
+	  					<h3>BEFORE</h3>
+	  					<img style="max-width:100%" src="{{ url_for('static', filename='experiments/gluten-at-work/before.jpg') }}">
+	  				</div>
+	  				<div class="col sm-6">
+	  					<h3>AFTER</h3>
+	  					<img style="max-width:100%" src="{{ url_for('static', filename='experiments/gluten-at-work/after_rotated.jpg') }}">
+	  				</div>
+	  			</div>
 			</div>
 		</div>
 	</div>
@@ -234,7 +255,32 @@ span.footnote {
 	<h1 style="width:100%" id="gluten_simulation">GLUTEN SIMULATION</h1><br>
     <button id="enter_simulation" class="hover-btn" style="width:min-content"><span>ENTER SIMULATION</span></button>
 </div>
-<br>
+
+<div class="row text-center align-items-center justify-content-center" id="connections">
+		<h1>CONNECTIONS</h1><br>
+</div>
+<div class="container" style="padding:15px">
+	<div class="row text-center align-items-center justify-content-center">
+		<span><a href="#learning_goals">learning goals</a> · <a href="#enduring_understandings">enduring understandings</a></span>
+	</div>
+	<div class="row" id="learning_goals">
+		<h3>learning goals</h3>
+		<ul>
+			<li><strong>8.1</strong>  The physical properties of hydrocarbons and other organic molecules depend on their chemical structures and ability to engage in intermolecular attractions. <span class="comment">(many of the substances involved in breadmaking are organic molecules)</span></li>
+			<li><strong>6.3</strong>  The unique ability of hydrogen ions  to participate in polar covalent bonds but also to ionize and transfer between chemicals leads to acid-base reactions. <span class="comment">(the chemical processes for baking soda and baking powder are acid-base reactions)</span></li>
+			<li><strong>5.3</strong> Because solutions are mixtures (not pure substances), they can be made with varying amounts of solute and solvent. <span class="comment">(experimenting with different concentrations of ingredients in baking; dissolving yeast/flour in water)</span></li>
+		</ul>
+	</div>
+	<div class="row" id="enduring_understandings">
+		<h3>enduring understandings</h3>
+		<ul>
+			<li><strong>#3</strong>: Chemistry can be understood and described at the macroscopic (observable) level, the submicroscopic (particle) level, and the symbolic level. Making connections between these three is crucial to developing true understanding of chemical phenomena.
+			</li>
+			<li><strong>#5</strong>: Chemical reactions require particle collisions to occur, in the correct orientation and with sufficient energy. This means that reaction conditions can be manipulated to change the rate of the reaction.</li>
+		</ul>
+	</div>
+</div>
+<!-- <br>
 <div class="row align-items-center justify-content-center text-center" id="recipe">
 	<h1 style="width:100%">BASIC BREAD RECIPE</h1><br>
 	<ul>
@@ -246,7 +292,7 @@ span.footnote {
 		<li>2 tablespoons unsalted butter, melted</li>
 		<li>2 tablespoons honey</li>
 	</ul>
-</div>
+</div> -->
 
 {% endblock %}
 {% block js %}

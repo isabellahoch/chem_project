@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}Dissected Recipe{% endblock %}
+{% block recipeisactive %}active{% endblock %}
+{% block content %}
+<div class="container" style="padding:20px">
+	<div class="row text-center align-items-center justify-content-center">
+		<h1>DISSECTED RECIPE</h1>
+	</div><br>
+	<div class="row" style="padding-bottom:50px">
+		<p>In order to understand the chemical processes involved in making bread, let's dissect a recipe from <a href="https://tasteofhome.com">Taste of Home</a> for <a href="https://www.tasteofhome.com/recipes/basic-homemade-bread/">Basic Homemade Bread</a>.</p>
+	</div>
+	<div class="row">
+		<ol>
+			<div class="row align-items-center justify-content-center">
+				<img src="{{ url_for('static', filename='experiments/testing-leavening-agents/hehe.jpg') }}">
+			</div>
+			<li>
+				<h2>MIXING:</h2>
+				<p>In a large bowl, dissolve yeast in warm water. Add the sugar, salt, and 3 cups flour. Combine until smooth. Stir in enough remaining flour, 1/2 cup at a time, to form a soft dough.</p>
+			</li>
+			<h2>What's going on?</h2><br>
+			<p>When flour is mixed with water, the proteins in the flour, gliadin and glutenin, are hydrated and form gluten, which is a substance that gives elasticity to dough and helps it rise.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span><br>
+			<div class="row" id="celiac_disease" style="padding-left:50px">
+				<h3>celiac disease</h3>
+				<p>Celiac disease is “a condition caused by an abnormal sensitivity to <a href="#gluten">gluten</a> in the diet.” (Hill, <i>Attack of the Gluten</i>) The immune system of people with this disease mistakenly identifies parts of gliadin and glutenin—the two proteins in gluten—as “foreign” and sends out lymphocytes to destroy these foreign epitopes. When partially digested gluten enters the bloodstream from the intenstine, a series of reactions triggered by the epitopes results in the release of cykotines, leading to inflammation of the intestinal lining. This causes symptoms such as abdominal pain, diarrhea, skin rashes, and, ultimately, severe intestinal damage. However, there are many possible wheat substitutes in existence today, such as sorghum, hydroxymethylcellulose, and xantham gum.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span></p>
+			</div>
+			<p>The role of the salt is to create a stronger and more stable dough as its ions (Na<sup>2+</sup> and Cl<sup>-</sup>) shield the charges of gluten and allow the molecules to get closer.<span class='footnote' data-toggle="tooltip" title='Royal Society of Chemistry, "Bread Chemistry: On the Rise". Chemistry World. October 2009.'></span></p>
+			<p>In this recipe, the leavening agent used is <a href="/background#yeast">yeast</a>, so the water helps to re-activate the dried yeast fungi.<span class='footnote' data-toggle="tooltip" title='Nelson, Pamela. "How Sourdough Bread Works." <i>How Stuff Works</i>, <a href="http://science.howstuffworks.com/innovation/ edible-innovations/sourdough.htm">science.howstuffworks.com/innovation/edible-innovations/sourdough.htm</a>. Accessed 1 May 2019.'></span></p>
+			<div class="row align-items-center justify-content-center">
+				<img src="{{ url_for('static', filename='experiments/testing-leavening-agents/4.jpg') }}">
+			</div>
+			<li id="rising">
+				<h2>RISING:</h2>
+				<p>Cover and let rise in a warm place until doubled, about 1-1/2 hours.</p>
+			</li>
+			<h2>What's going on?</h2><br><p>The process of bread rising (also known as proving) involves the creation of bubbles of CO<sub>2</sub> gas. The chemical reaction that produces carbon dioxide depends on the leavening agent used; for yeast, this process is fermentation, and for baking soda and baking powder, what occurs is an acid-base reaction. Each of the leavening agents used can be understood in more detail below.</p>
+			<div class="row" id="leavening_agents" style="padding-left:50px">
+				<div class="row" id="yeast">
+					<h3>yeast</h3>
+					<p>Yeast are tiny single-celled organisms that feed on sugar in a process called <strong>fermentation</strong> to produce ethanol and carbon dioxide. The fermentation process can be summarized with this chemical equation: <span class="chemical_equation">C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> ➝ 2CH<sub>3</sub>CH<sub>2</sub>OH + 2CO<sub>2</sub></span><span class='footnote' data-toggle="tooltip" title="Ibid."></span> The carbon dioxide causes the dough to increase in volume and rise; the ethanol evaporates when the bread is baked. It also contributes to the "enticing aroma" of bread.<span class='footnote' data-toggle="tooltip" title='Royal Society of Chemistry, "Bread Chemistry: On the Rise". Chemistry World. October 2009.'></span>
+					</p>
+					<br>
+					<div class="row sub-row" id="yeast_honey">
+						<h4>yeast + honey</h4>
+						<p>When a combination of yeast and honey is used in baked goods, there tends to be a higher rise due to the additional glucose. As the yeast feeds on glucose during fermentation, the addition of honey means more CO<sub>2</sub> will be produced.</p>
+					</div>
+				</div>
+				<div class="row" id="sourdough">
+					<h3>sourdough starter</h3>
+					<p>Instead of instant yeast, where yeast are dried and fored into a powder, with sourdough bread, sourdough yeast fungi live in a liquid medium known as a <strong>starter</strong>. Often, bakers will share starters, but many people also utilize the wild yeast in the air to create their own starters from scratch. (This is actually how the earliest bread was made -- sometimes accidentally!)<span class='footnote' data-toggle="tooltip" title='Nelson, Pamela. "How Sourdough Bread Works." <i>How Stuff Works</i>, <a href="http://science.howstuffworks.com/innovation/ 
+			     edible-innovations/sourdough.htm">science.howstuffworks.com/innovation/ 
+			     edible-innovations/sourdough.htm</a>. Accessed 1 May 2019.'></span>The acidic flavor of sourdough bread comes from lactic acid, as the starter also contains a bacteria, lactobacilli. Along with the alcohol created by the yeast, this contributes to the unique flavor of this variety of bread.<span class='footnote' data-toggle="tooltip" title='Ibid.'></span></p>
+				</div>
+				<div class="row" id="baking_soda">
+					<h3>baking soda</h3>
+					<p>This is an acid-base reaction. Baking soda reacts with an acid (in the case of <a href="/experiment">this experiment</a> I used lemon juice, also known as citric acid) to create carbon dioxide and water: <span class="chemical_equation">3NaHCO<sub>3</sub>+C<sub>6</sub>H<sub>8</sub>O<sub>7</sub> ⟶ 3Na<sup>+</sup>+C<sub>6</sub>H<sub>5</sub>O<sub>7</sub><sup>3-</sup>+3H<sub>2</sub>O+3CO<sub>2</sub></span>.<span class='footnote' data-toggle="tooltip" title="'What's New, CO2 ? Get to Know a Chemical Reaction.' American Chemical Society, 2009, www.acs.org/content/dam/acsorg/education/outreach/kidschemistry/chemical-reaction-kids-and-chemistry-kit-teacher-guide.pdf. Accessed 15 May 2019.'"></span></p>
+				</div>
+				<div class="row" id="baking_powder">
+					<h3>baking powder</h3>
+					<p>Baking powder produces CO<sub>2</sub> in a way similar to <a href="#baking_soda">baking soda</a>, only it does not require the addition of a separate acid as it already contains a dry acid. It is composed of <a href="#baking_soda">baking soda</a> (sodium bicarbonate, NaHCO<sub>3</sub>) and a dry acid, usually cream of tartar (KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub>. After the addition of a water-based ingredient, these substances react to form CO<sub>2</sub> <i>(g)</i> and other products: <span class="chemical_equation">NaHCO<sub>3</sub> + KHC<sub>4</sub>H<sub>4</sub>O<sub>6</sub> → KNaC<sub>4</sub>H<sub>4</sub>O<sub>6</sub> + H<sub>2</sub>O + CO<sub>2</sub></span>. There are two common types of baking powder that you can find on the shelf: single-acting and double-acting. Single-acting powder reacts to form carbon dioxide when the dough is mixed, whereas double-acting powder also makes CO2 when the mixture is heated.)<span class='footnote' data-toggle="tooltip" title='Helmenstine, Anne Marie, Ph.D. "How Does Baking Powder Work in Cooking?" <i>ThoughtCo</i>, Dotdash, <a href="www.thoughtco.com/how-baking-powder-works-607382">www.thoughtco.com/how-baking-powder-works-607382</a>. Accessed 11 May 2019. '></span>
+					</p>
+				</div>
+			</div>
+			<li id="kneading">
+				<h2>KNEADING:</h2>
+				<p>Turn onto a floured surface; knead until smooth and elastic, 8-10 minutes. Place in a greased bowl, turning once to grease the top.</p>
+			</li>
+			<h2>What's going on?</h2><br><p>When bread dough is kneaded, the proteins are stretched out and aligned correctly with one another, which facilitates the formation of a network of hydrogen bonds within the dough.<span class='footnote' data-toggle="tooltip" title="Hill, Margaret. 'Attack of the Gluten.'' ChemMatters, Feb. 2012, pp. 9-11. American Chemical Society, <a href='www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html'>www.acs.org/content/acs/en/education/resources/highschool/chemmatters/past-issues/archive-2011-2012/gluten.html</a>. Accessed 10 Apr. 2019."></span></p>
+			<li>
+				<h2>SECOND RISE:</h2>
+				<p>Punch dough down. Turn onto a lightly floured surface; divide dough in half. Shape each into a loaf. Place in 2 greased 9x5-in. loaf pans. Cover and let rise until doubled, 30-45 minutes.</p>
+			</li>
+			<div class="row align-items-center justify-content-center">
+				<img src="{{ url_for('static', filename='experiments/testing-leavening-agents/3.jpg') }}">
+			</div>
+			<h2>What's going on?</h2><br><p>The bread rises again. (See analysis of <a href="#rising">STEP 2</a> for chemical processes involved)</p>
+			<div class="row align-items-center justify-content-center">
+				<img src="{{ url_for('static', filename='experiments/testing-leavening-agents/5.jpg') }}">
+			</div>
+			<li id="baking">
+				<h2>BAKING:</h2>
+				<p>Bake at 375° for 30-35 minutes or until golden brown and bread sounds hollow when tapped. Remove from pans to wire racks to cool.</p>
+			</li>
+			<p>The heat produces even more of a rise as the bread bakes. The increase in temperature accelerates the rate of fermentation until the dough reaches ~46°C and the yeast dies. The loaf is completely baked when it reaches an approximate temperature of 98°C. The color of the crust occurs due to the blending of sugars and other products.<span class='footnote' data-toggle="tooltip" title='"The Science of Bread Making." <i>Bake Info</i>, Baking Industry Research Trust, www.bakeinfo.co.nz/facts/ 
+     bread-making/science-of-bread-making/baking. Accessed 15 May 2019.'></span></p>
+		</ol>
+		<!-- <div class="row align-items-center justify-content-center">
+			<img style="height:250px" src="{{ url_for('static', filename='experiments/testing-leavening-agents/beautiful_image.jpg') }}">
+		</div> -->
+	</div>
+</div>
+{% endblock %}
+{% block head %}
+<style>
+li span, li p {
+	font-style: oblique;
+	font-size: 12pt;
+}
+
+li {
+	font-size: 30px;
+}
+
+img {
+	max-width:85%;
+	padding:15px;
+	max-height:750px;
+}
+</style>
+<style>
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: #24B1E6;
+}
+</style>
+
+<style>
+.sub-row {
+	margin-left: 20px;
+}
+
+.comment {
+	font-style:italic;
+}
+</style>
+{% endblock %}
+{% block js %}
+<script>
+jQuery(document).ready(function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
+ });
+</script>
+{% endblock %}

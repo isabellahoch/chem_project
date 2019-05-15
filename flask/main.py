@@ -120,6 +120,10 @@ def leavening_agents_photos():
 def implications():
     return render_template('implications.html')
 
+@app.route('/dissected-recipe')
+def dissected_recipe():
+    return render_template('dissected_recipe.html')
+
 @app.route('/simulation')
 def simulation():
     return render_template('simulation.html')
