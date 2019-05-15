@@ -11,10 +11,7 @@
 		<img src="https://ifoodreal.com/wp-content/uploads/2017/06/flavoring-how-to-make-kombucha-fizzy-7.jpg">
 	</div>
 	<div class="col-sm-8">
-		<ul>
-			<li>:)
-			</li>
-		</ul>
+		<p>The popular drink kombucha (“a delicious sour tonic beverage”) is made by a SCOBY, which stays on the surface of the tea and undergoes the fermentation process. To make kombucha, you must brew a room-temperature solution of tea with an addition of sweetener, and then add the SCOBY, which is also known as the mother. The mother will rise to the surface and begin to float, forming a thin layer of film. During this process, the sugars in the kombucha metabolize into acids (ex. gluconic acid). Because of the fermentation process, kombucha contains a small amount of alcohol, although not as much as beer.<span class='footnote' data-toggle="tooltip" title='Katz, Sandor Ellix. <i>The Art of Fermentation</i>. Minnesota Public Radio. The Splendid Table, Minnesota Public Radio, <a href="www.splendidtable.org/story/making-kombucha-an-excerpt-from-the-art-of-fermentation">www.splendidtable.org/story/making-kombucha-an-excerpt-from-the-art-of-fermentation</a>. Accessed 15 May 2019.'></span> The term “fermentation” comes from a Latin word meaning “to boil” due to the foaming/bubbling of early fermented substances. The activity of bacteria and/or yeasts enzymatically digesting substrates prompts fermentation. Like with bread, the rate of fermentation for kombucha is affected by the concentration of microorganisms, enzymes, cells, pH, and temperature, as well as in some cases the concentration of oxygen.<span class='footnote' data-toggle="tooltip" title='"Kombucha: Something Is Brewing." <i>ChemMatters</i>, Feb.-Mar. 2016. <i>American Chemical Society</i>, <a href="www.acs.org/content/dam/acsorg/education/resources/highschool/chemmatters/teacherguide/chemmatters-tg-feb2016-kombucha.docx">www.acs.org/content/dam/acsorg/education/resources/highschool/chemmatters/teacherguide/chemmatters-tg-feb2016-kombucha.docx</a>.'></span></p>
 	</div>
 </div>
 <div class="row" id="beer">
@@ -24,7 +21,7 @@
 	</div>
 	<div class="col-sm-8">
 		<ul>
-			<li>:)
+			<li>Fermented drinks such as wine and beer have been created since Neolithic times using the natural process of fermentation.<span class='footnote' data-toggle="tooltip" title='"Kombucha: Something Is Brewing." <i>ChemMatters</i>, Feb.-Mar. 2016. <i>American Chemical Society</i>, <a href="www.acs.org/content/dam/acsorg/education/resources/highschool/chemmatters/teacherguide/chemmatters-tg-feb2016-kombucha.docx">www.acs.org/content/dam/acsorg/education/resources/highschool/chemmatters/teacherguide/chemmatters-tg-feb2016-kombucha.docx</a>.'></span>
 			</li>
 		</ul>
 	</div>
@@ -32,13 +29,14 @@
 <div class="row" id="synthetic_eggs">
 	<h2>SYNTHETIC EGGS</h2>
 	<div class="col-sm-4">
-		<img src="http://www.financetwitter.com/wp-content/uploads/2016/03/China-Fake-Eggs-Holding-A-Sample.jpg">
+		<img src="https://s.hdnux.com/photos/01/01/73/02/17281177/12/940x0.jpg">
 	</div>
 	<div class="col-sm-8">
-		<ul>
+		<p>Scientists in an SF startup, <a href="https://www.clarafoods.com/">Clara Foods</a>, have managed to create synthetic egg white proteins by bioengineering yeast cells through fermentation. These “lab-grown” proteins are a big innovation for those who are trying to maintain a vegan, “ethical” diet while still retaining flavor. This new product will likely hit the market in 2020!<span class='footnote' data-toggle="tooltip" title='Bitker, Janelle. "Bay Area food tech firm hatches plan for chicken-less egg proteins." <i>San Francisco Chronicle</i>, <a href="www.sfchronicle.com/food/article/Bay-Area-food-tech-company-prepares-to-unleash-13795267.php">www.sfchronicle.com/food/article/Bay-Area-food-tech-company-prepares-to-unleash-13795267.php</a>. Accessed 26 Apr. 2019.)'></span></p>
+		<!-- <ul>
 			<li>:)
 			</li>
-		</ul>
+		</ul> -->
 	</div>
 </div>
 {% endblock %}
@@ -53,6 +51,30 @@ h1,h2,h3 {
 
 img {
 	max-width:30vw;
+	/*max-height:250px;*/
 }
 </style>
+<style>
+body {
+    counter-reset: footnotecounter;
+}
+
+span.footnote:before {
+  counter-increment: footnotecounter;
+  content: counter(footnotecounter);
+  position: relative;
+  top: -0.4em;
+}
+
+span.footnote {
+    color: #24B1E6;
+}
+</style>
+{% endblock %}
+{% block js %}
+<script>
+jQuery(document).ready(function() {
+  jQuery('[data-toggle="tooltip"]').tooltip({html:true})
+ });
+</script>
 {% endblock %}
